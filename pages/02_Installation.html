@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01. Installation</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Simulator Menu</h3>
+    <a href="../index.html">00. Index/Dashboard</a>
+    <a href="01_Introduction.html">01. Introduction</a>
+    <a href="02_Installation.html">02. Installation</a>
+    <a href="03_GettingStarted.html">03. Getting Started</a>
+    <a href="04_Interface.html">04. Interface</a>
+    <a href="05_Aircraft_Ops.html">05. Aircraft Ops</a>
+    <a href="06_Weather_&_Time.html">06. Weather & Time</a>
+    <a href="07_Special_Showcase.html">07. Special Showcase</a>
+    <a href="08_VFX_&_Fun.html">08. VFX & Fun</a>
+    <a href="09_Help_&_Support.html">09. Help & Support</a>
+    <a href="10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="../full_manual.html">99. Print Full Manual</a>
+</div>
+
+
+<div class="page-container">
+    <h1>02. Installation</h1>
+
+    <h3>2.1 Application Setup</h3>
+    <p>The simulator is distributed as three separate packages. Please ensure you download and extract the correct package for each respective station:</p>
+    <ul>
+        <li><strong>Server Station:</strong> BAF ATC Simulator [SERVER] v1.3.21.zip</li>
+        <li><strong>Arrival Station:</strong> BAF ATC Simulator [ARRIVAL] v1.3.21.zip</li>
+        <li><strong>Departure Station:</strong> BAF ATC Simulator [DEPARTURE] v1.3.21.zip</li>
+    </ul>
+
+    <p>To extract, right-click the .zip file on the designated station and select <strong>Extract All...</strong> (or use tools like <strong>7-Zip</strong> or <strong>WinRAR</strong>) to your preferred local directory.</p>
+    
+    <div class="note">
+        <strong>Note:</strong> File names and version numbers may change with future updates. Always ensure that the <strong>exact same version</strong> is installed across all three stations. Additionally, make sure each station runs only its specifically assigned package (Server, Arrival, or Departure) to maintain proper network compatibility.
+    </div>
+
+    <hr>
+
+    <h3>2.2 Directory Structure</h3>
+    <p>Once extracted, the folder structure for each station should appear as follows. Keep all files in their original locations to prevent runtime errors. We would only require the <strong>BAF ATC Simulator.exe</strong> from here for further operation.</p>
+
+<div class="code-backdrop">
+<pre>
+📁 BAF ATC Simulator [STATION_NAME] v1.3.21
+📁 BAF ATC Simulator_Data
+📁 D3D12
+📁 MonoBleedingEdge
+─ BAF ATC Simulator.exe
+─ FishNet.SDK.Id
+─ UnityCrashHandler64.exe
+─ UnityPlayer.dll
+</pre>
+</div>   
+
+    <hr class="page-break">
+
+    <h3>2.3 Launching the Simulator</h3>
+
+    <p>To start the application, navigate to the extracted folder and double-click the <strong>BAF ATC Simulator.exe</strong> file. You can always navigate to the original folder and run the application from here at any time. However, to ease the workflow, it is highly recommended to create a desktop shortcut or <strong>Pin the application to your taskbar</strong> for quick access.</p>
+
+    <div class="note">
+        <strong>Note:</strong> This application is portable and does not require installation. Simply extract the contents and double-click the <strong>BAF ATC Simulator.exe</strong> file to launch the simulator directly.
+    </div>
+    
+    <h4>Setting Up Quick Access</h4>
+    <p>To ensure quick access to the simulator, you can create a desktop shortcut or pin the executable to your taskbar.</p>
+
+    <ul>
+        <li><strong>Removing Old Taskbar Shortcuts:</strong> If you have a shortcut for an older version already pinned to your taskbar, right-click the existing icon and select <strong>Unpin from taskbar</strong>.</li>
+        <li><strong>Pinning New Version to Taskbar:</strong> Simply drag and drop the new <strong>BAF ATC Simulator.exe</strong> file directly onto your taskbar to pin it. Then just <strong>Single click</strong> to launch.</li>
+        <li><strong>Creating Desktop Shortcut:</strong> Right-click the <strong>BAF ATC Simulator.exe</strong> file, then select <strong>Send to > Desktop (create shortcut).</strong> You can rename the shortcut if u want.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Backup Note:</strong> When upgrading, it is strongly recommended to keep your previous working version as a backup. Only replace or delete the older version once you have fully tested and confirmed that the new version is operating correctly.
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> Ensure that your antivirus or Windows Defender does not block the <strong>BAF ATC Simulator.exe</strong>, as the simulator requires network permissions to establish communication between the Server and Client stations.
+    </div>
+</div>
+
+</body>
+</html>

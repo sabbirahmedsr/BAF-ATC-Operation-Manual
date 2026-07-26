@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BAF ATC Simulator Operation Manual</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-container { page-break-after: always; margin-bottom: 20px; }
+@media print { .sidebar { display: none; } }
+</style>
+</head>
+<body>
+<div class="sidebar">
+    <h3>Simulator Menu</h3>
+    <a href="./index.html">00. Index/Dashboard</a>
+    <a href="pages/01_Introduction.html">01. Introduction</a>
+    <a href="pages/02_Installation.html">02. Installation</a>
+    <a href="pages/03_GettingStarted.html">03. Getting Started</a>
+    <a href="pages/04_Interface.html">04. Interface</a>
+    <a href="pages/05_AircraftOps.html">05. Aircraft Ops</a>
+    <a href="pages/06_Weather_&_Time.html">06. Weather & Time</a>
+    <a href="pages/07_Special_Showcase.html">07. Special Showcase</a>
+    <a href="pages/08_VFX_&_Fun.html">08. VFX & Fun</a>
+    <a href="pages/09_Help_&_Support.html">09. Help & Support</a>
+    <a href="pages/10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="./full_manual.html">99. Print Full Manual</a>
+</div>
+
+<div class="page-container">
+    <h1>BAF ATC Simulator: Operation Manual</h1>
+
+    <table>
+            <thead>
+                <tr>
+                    <th>Ref</th>
+                    <th>Section</th>
+                    <th>Topic</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>01</td><td><strong>Introduction</strong></td><td>System Overview</td><td>Scope, software version, and hardware setup.</td></tr>
+                <tr><td>02</td><td><strong>Installation</strong></td><td>System Setup</td><td>Software installation and prerequisite configuration.</td></tr>
+                <tr><td>03</td><td><strong>Getting Started</strong></td><td>Launch The Application</td><td>Step-by-step startup sequence for hardware and software.</td></tr>
+                <tr><td>04</td><td><strong>Interface</strong></td><td>Dashboard Layout</td><td>Overview of the control interface and navigation.</td></tr>
+                <tr><td>05</td><td><strong>Aircraft Ops</strong></td><td>Flight Management</td><td>Create, operate, play pilot call, and delete aircraft.</td></tr>
+                <tr><td>06</td><td><strong>Weather & Time</strong></td><td>Environmental Control</td><td>Modifying weather, visibility, and time of day.</td></tr>
+                <tr><td>07</td><td><strong>Special Showcase</strong></td><td>Scenario Training</td><td>Special Scenario loading, sequence calls, and vehicle.</td></tr>
+                <tr><td>08</td><td><strong>VFX & Fun</strong></td><td>Visual Effects</td><td>Flying passes, fireworks, and other atmospheric effects.</td></tr>
+                <tr><td>09</td><td><strong>Help & Support</strong></td><td>Troubleshooting</td><td>Fixing common system or display issues.</td></tr>
+                <tr><td>10</td><td><strong>Acknowledgements</strong></td><td>Project Credits</td><td>Team members and contributor recognition.</td></tr>
+            </tbody>
+        </table>
+    
+    <div class="footer">&copy; 2026 BAF ATC Simulator Project | Operation Manual Index</div>
+</div>
+<div class="page-container">
+    <h1>01. Introduction</h1>
+
+    <h3>1.1 System Overview</h3>
+    <p>The BAF ATC Simulator is designed to provide a highly immersive and realistic environment for live, interactive air traffic control training. The system features a comprehensive 180-degree field of view, allowing trainees to monitor a vast portion of the airfield simultaneously, replicating the authentic experience of an actual control tower, as shown below:</p>
+    <img src="Images/BAF_ATC_Simulator_180_Degree_View.jpg" alt="180 Degree View">
+
+    <h3>1.2 System Architecture</h3>
+    <p>The simulator operates as a distributed multi-node network, featuring three primary stations integrated with a 180-degree Panoramic Trio View designed to replicate actual airport tower view.</p>
+    <ul>
+        <li><strong>Server Station:</strong> Acts as the central hub, managing the live 180-degree scenario, environmental conditions, and weather control systems.</li>
+        <li><strong>Arrival Station:</strong> Functions as a client node for real-time monitoring of arrival traffic, executing pseudo-pilot control commands, and triggering pre-recorded pilot voice communications.</li>
+        <li><strong>Departure Station:</strong> Functions as a client node for real-time monitoring of departure traffic, executing pseudo-pilot control commands, and triggering pre-recorded pilot voice communications.</li>
+        <li><strong>Panoramic Trio View:</strong> Consists of three large-scale high-definition displays connected to the server, which provide a seamless, panoramic 180-degree view that replicates the immersive perspective of an actual airport control tower.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h3>1.3 Operational Airfield Scenarios</h3>
+    <p>The simulator currently features two high-fidelity airport environments, with support for integrated day/night cycles and dynamic weather systems (e.g., fog, storms, and atmospheric effects like rainbows).</p>
+
+    <h5>Hazrat Shahjalal International Airport (VGHS)</h5>
+    <img src="Images/VGHS_Panoramic_View.jpg" alt="VGHS Panoramic View">
+
+    <h5>Jashore Airport (VGJR)</h5>
+    <img src="Images/VGJR_Panoramic_View.jpg" alt="VGJR Panoramic View">
+
+    <h5>Night Operations</h5>
+    <img src="Images/Night_Mode_View.jpg" alt="Night Operations">
+
+    <h5>Adverse Weather Conditions</h5>
+    <img src="Images/Stormy_Weather_View.jpg" alt="Stormy Weather">
+
+    <div class="page-break"></div>
+
+    <h3>1.4 Training Philosophy</h3>
+    <p>This simulator focuses on <strong>live, hands-on training</strong> to bridge the gap between theoretical knowledge and operational reality. By providing a highly <strong>interactive scenario-based environment</strong>, the system allows ATC students to practice real-world decision-making. Trainees can engage directly with the simulator, managing dynamic traffic situations and airport operations in a controlled yet authentic setting.</p>
+    <ul>
+        <li><strong>Hands-on Experience:</strong> Practical engagement with ATC systems.</li>
+        <li><strong>Interactive Scenarios:</strong> Dynamic environments that mimic real-life challenges.</li>
+        <li><strong>Operational Readiness:</strong> Focused training to ensure students are prepared for actual air traffic control responsibilities.</li>
+    </ul>
+
+    <h3>1.5 Technical Stack</h3>
+    <ul class="stack-list">
+        <li><strong>Core Engine:</strong> Unity 6000.2.8f1</li>
+        <li><strong>Rendering Pipeline:</strong> Built-in Render Pipeline</li>
+        <li><strong>Networking Architecture:</strong> Fishnet Networking</li>
+        <li><strong>3D Modeling & Design:</strong> Blender, 3ds Max</li>
+        <li><strong>UI/UX Design:</strong> Unity Native UI System</li>
+        <li><strong>Asset Creation & Texturing:</strong> Adobe Photoshop, Photopea</li>
+        <li><strong>Audio Engineering:</strong> Audacity</li>
+        <li><strong>Version Control & CI/CD:</strong> Git (GitHub, GitLab)</li>
+        <li><strong>Development Environment:</strong> Visual Studio 2022</li>
+        <li><strong>Target Operating System:</strong> Windows 10/11 Pro</li>
+    </ul>
+
+    <h3>1.6 Development Credits</h3>
+    <ul class="stack-list">
+        <li><strong>Developer:</strong> Azmi Studio</li>
+        <li><strong>Client:</strong> Bangladesh Air Force (BAF)</li>
+        <li><strong>Purpose:</strong> Providing an immersive environment for advanced ATC training.</li>
+    </ul>
+</div>
+<div class="page-container">
+    <h1>02. Installation</h1>
+
+    <h3>2.1 Application Setup</h3>
+    <p>The simulator is distributed as three separate packages. Please ensure you download and extract the correct package for each respective station:</p>
+    <ul>
+        <li><strong>Server Station:</strong> BAF ATC Simulator [SERVER] v1.3.21.zip</li>
+        <li><strong>Arrival Station:</strong> BAF ATC Simulator [ARRIVAL] v1.3.21.zip</li>
+        <li><strong>Departure Station:</strong> BAF ATC Simulator [DEPARTURE] v1.3.21.zip</li>
+    </ul>
+
+    <p>To extract, right-click the .zip file on the designated station and select <strong>Extract All...</strong> (or use tools like <strong>7-Zip</strong> or <strong>WinRAR</strong>) to your preferred local directory.</p>
+    
+    <div class="note">
+        <strong>Note:</strong> File names and version numbers may change with future updates. Always ensure that the <strong>exact same version</strong> is installed across all three stations. Additionally, make sure each station runs only its specifically assigned package (Server, Arrival, or Departure) to maintain proper network compatibility.
+    </div>
+
+    <hr>
+
+    <h3>2.2 Directory Structure</h3>
+    <p>Once extracted, the folder structure for each station should appear as follows. Keep all files in their original locations to prevent runtime errors. We would only require the <strong>BAF ATC Simulator.exe</strong> from here for further operation.</p>
+
+<div class="code-backdrop">
+<pre>
+📁 BAF ATC Simulator [STATION_NAME] v1.3.21
+📁 BAF ATC Simulator_Data
+📁 D3D12
+📁 MonoBleedingEdge
+─ BAF ATC Simulator.exe
+─ FishNet.SDK.Id
+─ UnityCrashHandler64.exe
+─ UnityPlayer.dll
+</pre>
+</div>   
+
+    <hr class="page-break">
+
+    <h3>2.3 Launching the Simulator</h3>
+
+    <p>To start the application, navigate to the extracted folder and double-click the <strong>BAF ATC Simulator.exe</strong> file. You can always navigate to the original folder and run the application from here at any time. However, to ease the workflow, it is highly recommended to create a desktop shortcut or <strong>Pin the application to your taskbar</strong> for quick access.</p>
+
+    <div class="note">
+        <strong>Note:</strong> This application is portable and does not require installation. Simply extract the contents and double-click the <strong>BAF ATC Simulator.exe</strong> file to launch the simulator directly.
+    </div>
+    
+    <h4>Setting Up Quick Access</h4>
+    <p>To ensure quick access to the simulator, you can create a desktop shortcut or pin the executable to your taskbar.</p>
+
+    <ul>
+        <li><strong>Removing Old Taskbar Shortcuts:</strong> If you have a shortcut for an older version already pinned to your taskbar, right-click the existing icon and select <strong>Unpin from taskbar</strong>.</li>
+        <li><strong>Pinning New Version to Taskbar:</strong> Simply drag and drop the new <strong>BAF ATC Simulator.exe</strong> file directly onto your taskbar to pin it. Then just <strong>Single click</strong> to launch.</li>
+        <li><strong>Creating Desktop Shortcut:</strong> Right-click the <strong>BAF ATC Simulator.exe</strong> file, then select <strong>Send to > Desktop (create shortcut).</strong> You can rename the shortcut if u want.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Backup Note:</strong> When upgrading, it is strongly recommended to keep your previous working version as a backup. Only replace or delete the older version once you have fully tested and confirmed that the new version is operating correctly.
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> Ensure that your antivirus or Windows Defender does not block the <strong>BAF ATC Simulator.exe</strong>, as the simulator requires network permissions to establish communication between the Server and Client stations.
+    </div>
+</div>
+<div class="page-container">
+    <h1>03. Getting Started</h1>
+
+    <h3>3.1 Hardware Startup Sequence</h3>
+    <p>To ensure stable display synchronization, please follow this startup sequence:</p>
+    <ol>
+        <li><strong>Power Up All Devices:</strong> Ensure all equipment—including the 3 large TVs, computer stations, and audio/speaker systems—are connected to their power sources and all power switches are turned on.</li>
+        <li><strong>Turn On Displays:</strong> Turn on the three large TV monitors.</li>
+        <li><strong>Turn On Audio:</strong> Power on the speaker system for both left and right channels.</li>
+        <li><strong>Start Server Station:</strong> Power on the central Server computer.</li>
+        <li><strong>Start Client Stations:</strong> Power on the Arrival and Departure Client stations.</li>
+    </ol>
+
+    <div class="note">
+        <strong>Note:</strong> Please ensure the three large TV monitors are turned on before starting the Server computer. If they are off, the server computer may fail to detect the correct display output during the boot process.
+    </div>
+
+    <hr>
+
+    <h3>3.2 Verification Checklist</h3>
+    <ul>
+        <li><strong>Display Alignment:</strong> Ensure all three monitors are active and displaying a seamless visual across all monitors. (If the layout is incorrect, refer to the Troubleshooting section to reconfigure the monitor sequence).</li>
+        <li><strong>Audio Check:</strong> Confirm that audio is playing correctly through both the left and right speakers. This is a must to play the Ground Control (Left Channel) and Tower Control (Right Channel) call properly.</li>
+        <li><strong>System Status:</strong> Verify that the Server and Client stations have fully initialized and are ready for application launch.</li>
+    </ul>
+
+    <hr class="page-break">
+
+
+    <h3>3.3 Launch Application</h3>
+    <p>Single-click the <strong>BAF ATC Simulator</strong> icon pinned to the taskbar on each machine. After launching the application, follow the steps below to initialize the simulation:</p>
+    <ul>
+        <li><strong>Server Station:</strong> Once the application opens, click the <strong>"Start"</strong> button. In the next panel, select the desired airport from the "Airport" dropdown menu and click the <strong>"Start"</strong> button to load the simulation environment.</li>
+        <li><strong>Client Station:</strong> Once the Server Station loads successfully and the application opens on both Arrival and Departure stations, click the <strong>"Start"</strong> button, select the matching airport from the "Airport" dropdown menu, and click the <strong>"Join"</strong> button.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> Please ensure the Server station has fully initialized the simulation before attempting to join from any Client (Arrival / Departure) station.
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> You must select the exact same airport on the Client stations as the one chosen on the Server. If the airports do not match, the connection will establish, but the aircraft and map data will display incorrectly or in the wrong locations.
+    </div> 
+
+
+    <hr>
+
+    <h3>3.4 Closing Application</h3>
+    <p>To safely close the application, follow these steps:</p>
+    <ol>
+        <li>Click the <strong>Option button</strong> (list icon) at the bottom-left of the screen.</li>
+        <li>Select <strong>Stop Client & Exit</strong> and confirm to return to the Home Menu.</li>
+        <li>Select <strong>Exit</strong> from the Home Menu and confirm to close the application.</li>
+    </ol>
+    
+    <div class="note">
+        <strong>Note:</strong> Client stations can join or exit the simulation at any time. However, if the Server station is closed, all active Client sessions will be lost. For a clean shutdown, it is recommended to close the Client stations first, followed by the Server station.
+    </div>
+</div>
+<div class="page-container">
+    
+    <h1>04. Interface</h1>
+
+    <p>The simulator interface is designed to be simple and organized. It is divided into various sections to facilitate smooth interaction and inspection. Every panel displays its <strong>Name</strong> at the <strong>Top-Left Corner</strong> for quick identification. The main panels include the <strong>Radar Map</strong> and <strong>Surface Map</strong>, the <strong>Info Panel</strong>, the <strong>Console</strong> (Server only), and the <strong>Strip Panel</strong>(Client only) and <strong>Command Panel</strong> (Client only).</p>
+
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="Images/Server_Interaface.png" alt="Simulator Interface">
+    </div>
+
+    <hr>
+
+    <h3>4.1 Radar & Surface Map Panels</h3>
+
+    <p>The map panels are the central part of the interface, providing essential tactical data for air traffic control.</p>
+
+    <ul>
+        <li><strong>Radar Map:</strong> Located on the <strong>Left Side</strong>, half of the screen, provides a comprehensive TMA view, from <strong>12NM</strong> up to <strong>50NM</strong> (when available), essential for tracking aircraft positions, identifying navigation aids, and monitoring flight paths within the approach and departure corridors.</li>
+        <li><strong>Surface Map:</strong> Positioned on the <strong>Bottom-Right</strong>, occupies half of the vertical and horizontal area. It provides a detailed airfield layout, allowing operators to visualize taxiways, runways, and parking areas to manage ground movements effectively.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <p>Both panels feature two critical control dropdowns at the <strong>top-right corner</strong>  to customize your view:</p>
+
+    <ul>
+        <li><strong>Theme:</strong> Toggle between <strong>[NONE]</strong>, <strong>[LIGHT]</strong>, <strong>[DARK]</strong>, or <strong>[S-MAP (SATELLITE)]</strong> modes.</li>
+        <li><strong>Range/View:</strong> Dynamic controls based on the map type:
+            <ul>
+                <li><strong>Radar Map:</strong> Adjust the radar range (e.g., 50NM, 25NM, 12NM) for required coverage.</li>
+                <li><strong>Surface Map:</strong> Toggle between specific ground views like <strong>Runway</strong> or <strong>Parking</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <hr>
+
+    <h3>4.2 Information Panel</h3>
+    <p>Located at the <strong>Top-Middle</strong> of the screen, this panel displays essential real-time data and scoring for all stations. It tracks <strong>ATC Time</strong>, <strong>Elapsed Time</strong>, and <strong>Date</strong>. Additionally, the <strong>Server</strong> shows total <strong>Arrival/Departure</strong> scores, while the <strong>Client</strong> shows station-specific performance metrics.</p>
+
+
+    <ul>
+        <li><strong>Data Display:</strong> It tracks the current <strong>ATC Time</strong>, <strong>Elapsed Time</strong>, and <strong>Date</strong>. These metrics are vital for pilots to coordinate activities such as startup requests or taxi timing.</li>
+        <li><strong>Performance Metrics:</strong> 
+            <ul>
+                <li><strong>Server View:</strong> Displays total system <strong>Arrival</strong> and <strong>Departure</strong> scores for overall monitoring.</li>
+                <li><strong>Client View:</strong> Displays performance scores specific to the assigned station's role.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>4.3 Console Panel (Server Only)</h3>
+
+    <p>Located on the <strong>Top-Right</strong>, this panel is the central monitoring hub for the Server. This is exclusive to the Server station for system-wide monitoring.</p>
+
+    <ul>
+        <li><strong>Event Logging:</strong> This section continuously lists system activities, such as network updates, aircraft spawning, and flight data management.</li>
+        <li><strong>Connection Status:</strong> Located at the top, two circular indicators show real-time client connectivity. <strong>[GRAY]</strong> means disconnected, while <strong>[GREEN]</strong> confirms an active connection.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <h3>4.4 Strip & Command Panels (Client Only)</h3>
+
+    <p>Located on the <strong>Right Side</strong> of the screen, these panels are exclusive to the Client station for managing active flight operations.</p>
+
+    <ul>
+        <li><strong>Strip Panel:</strong> Positioned in the <strong>Center-Right</strong> area (below the <strong>Info Panel</strong>), this panel displays electronic flight strips for all active aircraft, providing a quick summary of essential flight information and status updates.</li>
+        <li><strong>Command Panel:</strong> Positioned at the <strong>Top-Right</strong>, this is the main interaction hub. It allows you to send instructions to aircraft, including movement confirmations with parameters, playing pre-recorded pilot calls, adjusting height, deleting flights, pausing tasks, and highlighting specific targets for monitoring.</li>
+    </ul>
+
+    <hr>
+
+    <h3>4.5 Options Menu</h3>
+    <p>Located at the <strong>Bottom-Left</strong>, look alike a <strong>List Icon</strong>, provides access to essential system tools:</p>
+    <ul>
+        <li><strong>General:</strong> Application exit and configuration.</li>
+        <li><strong>Server-Only:</strong> Controls for <strong>Global Pause</strong>, <strong>Weather</strong> setup, and traffic <strong>Sequence</strong> loading.</li>
+        <li><strong>Speed Control:</strong> A slider at the bottom adjusts the global simulation speed.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> The current simulation speed is displayed in the <strong>Info Panel</strong>. If the speed is set to anything other than <strong>1x</strong>, the indicator highlights with a <strong>Red Background</strong> to warn the operator.
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> If the simulation appears frozen or aircraft are not moving, always check if the <strong>Global Pause</strong> is active. It is common to overlook this, so ensure the system is not paused before troubleshooting other issues.
+    </div>
+
+</div>
+<div class="page-container">
+    <h1>06. Weather & Time</h1>
+    <p>The ATC Simulator integrates a highly sophisticated, <strong>procedural sky and weather system</strong>. This architecture enables <strong>real-time</strong> atmospheric manipulation, delivering a deeply immersive environment. The following illustration depicts a <strong>typical foggy day</strong>, which creates an exceptaional challenging situation for an ATC with <strong>low visibility</strong>, demonstrating the system's dynamic rendering capabilities.</p>
+    
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="Images/Weather_Panorama_Foggy_Day.jpg" alt="Dense Foggy Weather">
+    </div>
+
+    <p>To access the environmental controls, navigate to the <strong>Sky and Weather</strong> panel via the <strong>options menu</strong> (located at the <strong>bottom-left</strong> corner of the interface, indicated by a <strong>list icon</strong>), or simply utilize the keyboard shortcut <strong>Ctrl + W</strong>.</p>
+    
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="Images/Weather_Setting.jpg" alt="Weather Control Interface">
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> If you find the extensive settings overwhelming, it is always recommended to select a pre-configured weather profile for a quick and consistent setup.
+    </div>
+   
+    <hr class="page-break">
+
+    <h3>6.1 Weather Profiles (Presets)</h3>
+    <p>For rapid configuration, the simulator includes ten pre-configured weather profiles. You can easily select these from the <strong>"Weather Profile" dropdown menu</strong>, located at the <strong>top section</strong> of the <strong>Sky and Weather</strong> control popup. A short description of each is as follows:</p>
+    <ul>
+        <li><strong>Default:</strong> Standard atmospheric conditions for routine training.</li>
+        <li><strong>Sunny Day:</strong> Clear skies with optimal visibility.</li>
+        <li><strong>Cloudy Day:</strong> Partially overcast skies with light cloud coverage.</li>
+        <li><strong>Overcast:</strong> Dense cloud coverage reducing overall brightness.</li>
+        <li><strong>Rainy Day:</strong> Moderate rainfall with associated atmospheric effects.</li>
+        <li><strong>Storm:</strong> Intense weather with heavy rain, low visibility, and lightning.</li>
+        <li><strong>Dark Night:</strong> Standard night environment with minimal ambient light.</li>
+        <li><strong>Moonlit Night:</strong> Night operation with significant illumination from the moon.</li>
+        <li><strong>Foggy:</strong> Low visibility conditions simulating ground-level mist.</li>
+        <li><strong>Rainbow:</strong> A specialized post-rain visual effect.</li>
+        <li><strong>Aurora:</strong> An experimental atmospheric effect for visual variety.</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.2 Custom Settings (Advanced)</h3>
+    <p>For advanced users requiring specific training environments, the system offers granular control over time, location, and atmospheric parameters. These settings are categorized within the <strong>Sky and Weather</strong> control interface.</p>
+
+    <h4>Time and Location</h4>
+    <p>This module allows for precise calibration of the simulation's temporal and geographical state. Specially you can set <strong>Day/Night mode</strong> from here using <strong>Hour of day</strong> slider.</p>
+    <ul>
+        <li><strong>Month of Year:</strong> Sets the calendar month to adjust seasonal lighting and environment.</li>
+        <li><strong>Day of Month:</strong> Defines the specific day to adjust sun positioning and lunar cycles.</li>
+        <li><strong>Hour of Day:</strong> Manually selects the time to simulate dawn, daylight, dusk, or night.</li>
+        <li><strong>Auto Change Speed:</strong> Controls the progression rate of the dynamic time system.</li>
+        <li><strong>Latitude & Longitude:</strong> Sets the precise geographical coordinates of the airport.</li>
+        <li><strong>Orientation:</strong> Rotates the global celestial direction to match runway headings.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <div class="note">
+        <strong>Tip:</strong> Use the <strong>Auto Change Speed</strong> slider to create dynamic, time-lapse scenarios that test a trainee's adaptability to changing light conditions.
+    </div>
+
+    <hr>
+
+    <h4>Cloud Setting</h4>
+    <p>This section provides comprehensive control over cloud formations, density, and movement to realistically simulate various sky conditions.</p>
+
+    <h5>Basic Cloud</h5>
+    <ul>
+        <li><strong>Alto Stratus Amount:</strong> Adjusts the density and coverage of mid-level stratus clouds.</li>
+        <li><strong>Cirrus Amount:</strong> Controls the visibility and spread of high-altitude wispy clouds.</li>
+        <li><strong>Cumulus Amount:</strong> Defines the quantity and prominence of puffy, low-level clouds.</li>
+        <li><strong>Cloud Scale:</strong> Sets the overall size and uniformity of the cloud formations.</li>
+    </ul>
+
+    <h5>Cumulus Parameter</h5>
+    <ul>
+        <li><strong>Quality:</strong> Determines the rendering fidelity and sharpness of cumulus clouds.</li>
+        <li><strong>Details:</strong> Adjusts the structural complexity and graininess of cloud textures.</li>
+        <li><strong>Frequency:</strong> Sets the occurrence rate of cloud patches across the sky.</li>
+        <li><strong>Speed:</strong> Controls the velocity at which clouds drift across the horizon.</li>
+        <li><strong>Direction:</strong> Defines the movement heading of the clouds to match wind flow.</li>
+    </ul>
+
+    <p>The following visualization demonstrates the system's dynamic rendering capabilities, showcasing a realistic cloudscape achieved through precise adjustments of the <strong>Basic Cloud</strong> and <strong>Cumulus Parameter</strong> settings.</p>
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="Images/Weather_Panorama_Cloudy_Day.jpg" alt="Dynamic Cloudy Weather">
+    </div>
+    
+    <hr class="page-break">
+
+
+
+
+
+    <h4>Weather Setting</h4>
+    <p>This module provides control over atmospheric conditions, allowing for the simulation of diverse meteorological scenarios to challenge ATC operations.</p>
+
+    <ul>
+        <li><strong>Fog Density:</strong> Adjusts the thickness of ground-level mist to limit visual range.</li>
+        <li><strong>Humidity:</strong> Sets the moisture level in the air affecting atmospheric clarity.</li>
+        <li><strong>Temperature:</strong> Defines the ambient thermal state, influencing overall weather behavior.</li>
+    </ul>
+
+    <ul>
+        <li><strong>Overcast Amount:</strong> Sets the intensity of cloud cover obscuring direct sunlight.</li>
+        <li><strong>Rain Amount:</strong> Controls the volume and intensity of rainfall.</li>
+        <li><strong>Lightning:</strong> Adjusts the frequency and intensity of lightning strikes during storms.</li>
+    </ul>
+
+    <ul>
+        <li><strong>Snow Amount:</strong> Sets the volume and accumulation intensity of snowfall.</li>
+        <li><strong>Rainbow:</strong> Toggles the intensity of the rainbow effect post-precipitation.</li>
+        <li><strong>Wind Amount:</strong> Controls the velocity and strength of wind gusts across the airfield.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> Some parameters may overlap on other parameter. For example, setting <strong>Overcast Amount</strong> to its maximum will fully cover the sky, so you can not see any changes made on <strong>Cumulus</strong> or <strong>Cirrus</strong> setting.
+    </div>
+
+    <hr>
+
+
+
+
+    <h4>Sound Setting</h4>
+    <p>This section allows users to balance the audio output of the simulation, ensuring optimal clarity for training exercises as shown in <strong>image_16377d.png</strong>.</p>
+    <ul>
+        <li><strong>Master Volume:</strong> Adjusts the global audio output level for the entire simulation.</li>
+        <li><strong>Wind Volume:</strong> Controls the intensity of ambient wind audio effects.</li>
+        <li><strong>Day Volume:</strong> Sets the background sound levels for daytime environment presets.</li>
+        <li><strong>Night Volume:</strong> Defines the volume level for nighttime ambient soundscapes.</li>
+        <li><strong>Rain Volume:</strong> Adjusts the audio prominence of precipitation effects.</li>
+        <li><strong>Thunder Volume:</strong> Controls the impact and volume of storm-related thunder sounds.</li>
+    </ul>
+
+    <hr class="page-break">
+
+
+
+
+
+
+    <h4>More Parameter</h4>
+    <p>This section provides advanced lighting adjustments to fine-tune the visual environment.</p>
+    <ul>
+        <li><strong>Day Sky Light:</strong> Adjusts the brightness of the sky during daytime.</li>
+        <li><strong>Day Surface Light:</strong> Controls the intensity of ground surface light during the day.</li>
+        <li><strong>Night Sky Light:</strong> Modifies the luminosity of the sky during nighttime.</li>
+        <li><strong>Night Surface Light:</strong> Regulates the brightness of ground surfaces during night.</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.3 Additional Controls</h3>
+    <p>At the bottom of the popup, additional utility functions are available to manage the environment:</p>
+    <ul>
+        <li><strong>Light : ON/OFF:</strong> Toggles the simulation's artificial lighting systems.</li>
+        <li><strong>Random:</strong> Generates a randomized weather profile for unpredictable training scenarios.</li>
+        <li><strong>Reset All:</strong> Reverts all atmospheric settings to the system default.</li>
+        <li><strong>Back:</strong> Closes the weather popup and returns to the previous menu.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> Since the system is procedural and runtime-based, changes made to custom settings will take effect immediately without requiring a restart of the simulation.
+    </div>
+
+    <hr>
+
+    <h3>6.4 Day/Night Operation</h3>
+    <p>Users can manage time and lighting conditions through two primary methods:</p>
+    <ul>
+        <li><strong>Weather Presets:</strong> Quickly select scenarios like <strong>Dark Night</strong> or <strong>Moonlit Night</strong> for instant environmental changes. For twist, <strong>Stormy Day</strong> also make the light as dark as night.</li>
+        <li><strong>Custom Settings (Advanced):</strong> Use the <strong>Time and Location</strong> module in the <strong>Sky and Weather</strong> interface, where the <strong>Hour of Day</strong> slider allows manual transitions between <strong>dawn, daylight, dusk, and night cycles.</strong></li>
+    </ul>
+
+
+</div>
+<div class="page-container">
+    <h1>07. Special Showcase</h1>      
+
+    <h3>7.1 Special Sequence (Exercise Scenario)</h3>
+    <p>This module provides pre-configured scenarios for professional demonstrations, specifically designed for <strong>Air Force Chief presentations</strong>. These scenarios require a <strong>specially trained operator</strong> and <strong>precise timing</strong> for perfect synchronization. </p>
+
+    <h4>How to Load the Scenario</h4>
+    <p>To begin, navigate to the <strong>bottom-left Option Menu</strong> and click the <strong>Load Sequence</strong> button. This <strong>action</strong> will <strong>automatically clear</strong> all existing aircraft from the scene and <strong>instantly spawn</strong> a new set of scenario-ready units. Once loaded, you can manage these aircraft through <strong>arrival and departure stations</strong> just like standard aircraft control.</p>
+
+    <h4>Sequence Calls</h4>
+    <p>Within the same <strong>Option Menu</strong>, clicking <strong>Sequence Call</strong> or <strong>(Ctrl+W)</strong> opens a specialized window containing additional voice commands tailored for these scenarios. You can play these audio clips instantly by clicking any item from the <strong>pilot call list</strong>, functioning exactly like the standard <strong>pilot call buttons</strong> found in the main command node.</p>
+
+
+    <hr>
+
+    <h3>7.2 Airport Vehicles & Ground Operations</h3>
+    <p>This module lets you control three essential ground vehicles at VGHS airport: <strong>Inspection</strong>, <strong>Dragchute</strong>, and <strong>CAAB</strong> vehicles. You can easily activate, pause, or resume any of these at any time using the following keyboard shortcuts.</p>   
+    <h4>Keyboard Shortcuts & Controls</h4>
+    <ul>
+        <li><strong>Inspection Vehicle:</strong> Press <strong>I</strong> or <strong>Numpad 1</strong> to Activate & then Pause/Resume.</li>
+        <li><strong>Dragchute Vehicle:</strong> Press <strong>D</strong> or <strong>Numpad 2</strong> to Activate & then Pause/Resume.</li>
+        <li><strong>CAAB Vehicle:</strong> Press <strong>C</strong> or <strong>Numpad 3</strong> to Activate & then Pause/Resume.</li>
+    </ul>
+    
+    <div class="note">
+        <strong>Note:</strong> Quickly pressing the assigned key (e.g. <strong>I</strong> or <strong>D</strong> or <strong>C</strong>) multiple times will <strong>Delete/Remove</strong> the vehicle from the scene.
+    </div>
+
+</div>
+<div class="page-container">
+    <h1>08. VFX & Fun</h1>
+    <p>This module adds visual effects and interactive elements to your simulation, enhancing the atmosphere for various events and presentations.</p>
+
+    <!-- Flypass Section -->
+    <h4>Flypass Demonstration</h4>
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="Images/VFX_Panorama_Fly_Pass.jpg" alt="Dense Foggy Weather">
+    </div>
+    <p>The <strong>Flypass</strong> effect is designed to provide a <strong>grand welcome</strong> for the incoming guests or high-profile visitors. You can trigger this at any time by pressing the <strong>Space</strong> button while the simulation is running. Currently, this feature is only available for <strong>VGHS</strong>.</p>
+
+    <hr>
+
+    <h4>Animations & Visuals Shortcut</h4>
+    <ul>
+        <li><strong>Acrobatic Show:</strong> Press <strong>Space</strong> to trigger the acrobatic animation.</li>
+        <li><strong>Formation Flight:</strong> Press <strong>Numpad 0</strong> to initiate the formation flight sequence.</li>
+        <li><strong>Fireworks:</strong> Press <strong>F</strong> to launch fireworks for special celebratory events.</li>
+    </ul>
+
+    <div class ="note">
+        <strong>Note:</strong> The <strong>Formation Flight</strong> is essential for our <strong>Special Showcase</strong> sequence too. We begin our special showcase by playing this animation. Alternatively, you can trigger this animation directly from the <strong>Sequence Call UI window</strong> by clicking the <strong>Play Anim</strong> button located at the <strong>bottom-left corner</strong> of it.
+    </div>
+
+    <h4>More VFX Keyboard Shortcut</h4>
+    <ul>
+        <li><strong>Thank You Message:</strong> Press <strong>T</strong> to toggle the thank you text animation.</li>
+        <li><strong>Bad Weather Warning:</strong> Press <strong>W</strong> to display the severe weather alert.</li>
+        <li><strong>Night Operation Alert:</strong> Press <strong>N</strong> to display the night operation notification.</li>
+        <li><strong>Barrier Control:</strong> Press <strong>B</strong> to toggle the movement (Up/Down) of the security barriers.</li>
+    </ul>
+</div>
+<div class="page-container">
+    <h1>09. Help & Support</h1>
+
+    <div class="support-intro">
+        <p>At <strong>Azmi Studio</strong>, our team is deeply committed to ensuring your experience is flawless. We are always available to provide dedicated support and technical guidance whenever you need us. Your project success is our priority, and we are only a message away.</p>
+        
+        <p><strong>How to Reach Us:</strong></p>
+        <ul>
+            <li><strong>Organization:</strong> Azmi Studio</li>
+            <li><strong>Email Address:</strong> info@azmistudio.com</li>
+            <li><strong>Technical Support Line:</strong> 01302609091</li>
+        </ul>
+    </div>
+
+    <hr>
+
+
+
+    <h3>9.1 System Verification Checklist</h3>
+    <p>While our support team is always available to assist you, we encourage you to perform these quick checks first if you encounter any irregularities. Although these steps seem very simple, we often <strong>overlook or accidentally miss</strong> these basic details during operation. Verifying these common points can quickly <strong>resolve many issues</strong> or at least make the system ready for the next stage even before you need professional assistance.</p>
+    <ul>
+        <li><strong>Power:</strong> Check that all power switches are turned on.</li>
+        <li><strong>Cables:</strong> Make sure all video, controller, and device cables are <strong>plugged in firmly</strong>.</li>
+        <li><strong>Sound:</strong> Verify speakers are connected and the <strong>volume is not muted</strong> from any point.</li>
+        <li><strong>Network:</strong> Ensure the network cable is connected and the network switch is powered on.</li>
+        <li><strong>MASTER CHECK:</strong> Confirm that <strong>all hardware and peripherals are functioning correctly within the operating system</strong> before launching our software.</li>
+        <li><strong>System:</strong> Ensure the server computer is running and the software is launched.</li>
+    </ul>
+    <div class="note">
+        <strong>Note:</strong> While it may seem simple, but <strong>Restart often works like magic</strong>. If you encounter any unexpected issues, we highly recommend <strong>powering off the entire system</strong> completely, <strong>waiting for a while</strong>, and then performing a <strong>fresh restart</strong>. This simple step often resolves most common irregularities before you even need to call for support.
+    </div>
+
+
+    <hr class="page-break">
+
+    <h3>9.2 Common Troubleshooting</h3>
+    <p>After verifying the system checklist, if you still encounter any irregularities, <strong>do not worry</strong>—you are already familiar with the setup and can often resolve these minor issues yourself. While the following steps are <strong>not guaranteed "fixes"</strong> for every scenario, they are effective workarounds that resolve most common hiccups. Give them a <strong>try first</strong>, and if the problem persists, our support team is always here to provide <strong>expert assistance</strong>.</p>
+
+    <h4>1. Any or all of 3 Large TVs showing "No Signal" or `No HDMI output`</h4>
+    <p><strong>Likely Cause:</strong> The system failed to detect the display, often because the <strong>TV was turned off</strong> during the <strong>server boot process</strong>.</p>
+    <p><strong>Corrective Action:</strong> Perform a <strong>full power cycle</strong>. Completely <strong>shut down</strong> the entire system, wait for a while, and then <strong>power on the TVs first</strong>. Once all screens are <strong>active</strong>, boot the <strong>server computer</strong> again.</p>
+
+    <hr>
+
+    <h4>2. Mis-arrangement of Screen Layout (Panoramic view looks scrambled)</h4>
+    <p><strong>Likely Cause:</strong> Our <strong>software and system</strong> require the monitors to be connected in a <strong>very specific order</strong>. This issue occurs if the display configuration has been <strong>reset</strong>, the cables were <strong>swapped</strong>, or the system <strong>misidentified</strong> the display sequence during startup.</p>
+    <p><strong>Corrective Action:</strong> Right-click on your <strong>desktop</strong> and select <strong>Display Settings</strong>. Scroll down to the <strong>Multiple displays</strong> section and click the <strong>Identify</strong> button. This will display a large number on each screen so you can verify the current order (Standard monitor should be <strong>1</strong>, and the 180° panorama TVs should be <strong>2, 3, and 4</strong> respectively). If the order is incorrect, <strong>shuffle the HDMI cables</strong> at the back of the server pc to match the required sequence. Restart the system once finished to ensure the software <strong>re-detects the correct layout</strong>.</p>
+
+    <div class="note">
+        <strong>Note:</strong> Since Windows does not always assign a <strong>fixed port-to-output index</strong>, shuffling cables can be a <strong>trial-and-error process</strong>. Adding or moving a cable may sometimes change the <strong>display number</strong> unexpectedly, so you may need to repeat the <strong>Identify</strong> process until the sequence is correctly aligned.<br><br>
+        <strong>Tips:</strong> Instead of changing <strong>HDMI cables</strong>, sometimes <strong>switching the 3 TVs physical position</strong> might be a faster way to achieve the correct order.</p>
+    </div>
+
+    <hr class="page-break">
+
+
+
+    <h4>3. Simulator Application Fails to Launch</h4>
+    
+    <p><strong>Likely Cause:</strong> The <strong>source files</strong> might have been moved, renamed, or deleted from the <strong>original directory</strong>. As this is a <strong>Unity-based build</strong>, the application requires all supporting files to remain in their <strong>original location</strong> to function.</p>
+    
+    <p><strong>Corrective Action:</strong> Verify the <strong>original installation folder</strong> to ensure all components are present, as listed in the <strong>Directory Structure</strong> (Section 2.2). Check that the <strong>BAF ATC Simulator_Data</strong> folder and all core files (such as <strong>UnityPlayer.dll</strong>) are intact. If the structure has been altered, move the files back to their <strong>original path</strong>. Finally, launch the application as an <strong>administrator</strong> directly from the <strong>BAF ATC Simulator.exe</strong> file.</p>
+
+     <div class="note">
+        <strong>Note:</strong> If the issue persists, the best practice is to extract the <strong>original zip file</strong> again into a new folder to ensure a <strong>fresh installation</strong> and resolve any potential file corruption or path errors. That is why, we always recommend you that you <strong>never lose or delete the original zip file</strong>, even if the system is working perfectly.</p>
+     </div>
+
+    <hr>
+
+
+    <h4>4. Graphical Lag or Stuttering</h4>
+    
+    <p><strong>Likely Cause:</strong> This is often caused by the <strong>GPU overheating</strong> during long hours of operation, or outdated <strong>graphics drivers</strong> failing to handle the rendering load.</p>
+    
+    <p><strong>Corrective Action:</strong> Ensure the <strong>server environment</strong> has proper ventilation to prevent the <strong>GPU from overheating</strong>. Update your <strong>graphics drivers</strong> to the latest version and verify that the <strong>Power Management Mode</strong> is set to "High Performance." In the simulator's main settings menu, locate the <strong>Quality</strong> dropdown and switch to a <strong>lower quality level</strong> to stabilize the frame rate.</p>
+     
+    <hr>
+
+
+    <h4>5. Airplane or Map Misplacement</h4>
+    <p><strong>Likely Cause:</strong> This occurs if the <strong>server station</strong> and the <strong>client stations</strong> are loaded with different <strong>airport maps</strong> (e.g., one is running <strong>VGHS</strong> while another is on <strong>VGJR</strong>).</p>
+    <p><strong>Corrective Action:</strong> Before starting your session, ensure that every connected station (both server and all clients) has selected and loaded the <strong>exact same airport map</strong>. If the airplane appears misplaced, <strong>stop the simulation</strong>, confirm that everyone is on the <strong>same airport</strong>, and <strong>restart the session</strong> to ensure proper synchronization.</p>
+
+    <hr class="page-break">
+    
+    <h4>6. Audio Output Issues</h4>
+    
+    <p><strong>Likely Cause:</strong> The issue may arise from <strong>incorrect sound device selection</strong> in the operating system, a muted channel, or a loose connection in the <strong>audio interface</strong>.</p>
+    
+    <p><strong>Corrective Action:</strong> Ensure the system volume is <strong>not muted</strong> at any point. Select the correct <strong>output device</strong> in <strong>Windows Sound settings</strong>. If audio is still missing, check the physical connections between the server and the audio interface.</p>
+
+    <div class="note">
+        <strong>Note:</strong> Our system uses the <strong>left and right audio channels separately</strong>. To ensure both are working correctly, please play a <strong>"Left/Right Speaker Test"</strong> audio (available on YouTube / or from anywhere) to verify that your audio interface and cables are working properly, without even lanching our software.
+    </div>
+    
+    <hr>
+
+    <h4>7. Pilot Call Is Not Playing</h4>
+    <p><strong>Likely Cause:</strong> The specific audio data might be missing from the files. However, this is a critical component and <strong>should never happen</strong> under normal operation.</p>
+    <p><strong>Corrective Action:</strong> First, ensure that your <strong>audio output is working properly</strong> by following the steps in Section 6. If the audio is confirmed to be working but the pilot call still fails to play, please document the issue by noting the <strong>call sign</strong>, the <strong>flight phase</strong> (e.g., taxi, departure, arrival), and the specific <strong>audio message</strong> that is missing. If possible, capture a <strong>screenshot</strong> of the simulation state when the error occurred and share these details with the development team for analysis.</p>
+    
+    <div class="note">
+        <p><strong>Still facing issues?</strong> If the issue is not yet resolved or you encounter any complex <strong>scenario</strong>, do not hesitate to contact our technical support line. We are here to help!</p>
+    </div>
+
+
+     <hr class="page-break">
+
+    <h3>9.3 The Hidden Problem Solver Hero</h3>
+    <p>We haven’t just delivered the software and walked away; we are with you every step of the way. Our system operates as a silent sentinel in the background, constantly monitoring performance to ensure everything runs smoothly. Most of the time, you won’t even know it’s there.</p>
+
+    <img src="Images/In_Game_Console_Error.jpg" alt="In Game Console Error.">
+
+    <p>However, in the rare event that an error occurs, our hidden "hero"—the <strong>In-Game Debug Console</strong>—will instantly appear. We genuinely hope you never have to encounter it, but if a glitch happens, this console is your direct line to a quick resolution.</p>
+
+    <h4>System Workflow:</h4>
+    <ol>
+        <li><strong>Detection:</strong> The system detects an operational error.</li>
+        <li><strong>Alert:</strong> The small, red <strong>"Problem Solver Icon"</strong> (visible on the right side of the diagram) appears on the screen, indicating a critical issue.</li>
+        <li><strong>Expansion:</strong> Clicking this small <strong>"Problem Solver Icon"</strong> expands the full <strong>In-Game Debug Console</strong> across the screen. This large view displays detailed technical logs, allowing you to view and, if necessary, copy specific troubleshooting details.</li>
+    </ol>
+
+    <h4>How to use it if an issue arises:</h4>
+    <ul>
+        <li><strong>Capture the Issue:</strong> If the <strong>In-Game Debug Console</strong> pops up or is expanded, please take a <strong>screenshot</strong> of the entire view, including the detailed log messages.</li>
+        <li><strong>Copy the Reason:</strong> We have made it simple to copy the exact error message text directly from the logs. <strong>Copying this text</strong> is crucial for us, as it contains the technical "DNA" of the problem.</li>
+        <li><strong>Notify Us:</strong> Send the <strong>screenshot</strong> and the <strong>copied error details</strong> to our support team, and we will deal the rest within a very short time.</li> 
+    </ul>
+
+</div>
+<div class="page-container">
+    <h1>10. Acknowledgements</h1>
+    
+    <p>This simulator project is the result of collective effort, combining <strong>professional aviation expertise</strong> from the <strong>Bangladesh Air Force</strong> with <strong>advanced software engineering</strong> by <strong>Azmi Studio</strong>. We extend our sincere gratitude to the visionaries, engineers, and contributors who turned this concept into reality.</p>
+
+    <!-- Leadership Section -->
+    <h3>10.1 Leadership & Guidance</h3>
+    <ul class="ack-list">
+        <li><strong>Hasan Mahmood Khan</strong> - Air Chief Marshal | BBP, OSP, GUP, nswc, psc</li>
+        <li><strong>SHARIF SIR</strong> - <em>DESIGNATION @ BAF</em> | Advisory & Strategic Guidance</li>
+    </ul>
+
+
+    <!-- Project Team Section -->
+    <h3>10.2 Project Team (Bangladesh Air Force)</h3>
+    <ul class="ack-list">
+        <li><strong>MOQBUL SIR</strong> - <em>DESIGNATION @ BAF</em> | Project Supervision & Coordination</li>
+        <li><strong>NUR SIR</strong> - <em>DESIGNATION @ BAF</em> | Project Supervision & Coordination</li>
+        <li><strong>ANIS SIR</strong> - <em>DESIGNATION @ BAF</em> | Project Supervision & Coordination</li>
+        <li><strong>SABRINA MAM</strong> - <em>DESIGNATION @ BAF</em> | Project Supervision & Coordination</li>
+    </ul>
+
+    <!-- Developer Team Section -->
+    <h3>10.3 Developer (Azmi Studio)</h3>
+    <ul class="team-list">
+        <li><strong>SHAHREYAD FARABI</strong> - <em>CEO @ AZMI STUDIO</em> | Strategic Visionary & System Architect</li>
+        <li><strong>SABBIR AHMED</strong> - <em>COO @ AZMI STUDIO</em> | Lead Developer & Simulation Specialist</li>
+        <li><strong>GENIUS RAHMAN</strong> - <em>3D Artist @ AZMI STUDIO</em> | Aircraft Designer & Asset Specialist</li>
+    </ul>
+
+    <!-- Special Thanks Section -->    
+    <h3>10.4 Special Thanks</h3>
+    <ul class="ack-list">
+        <li><strong>JSR CMD MAM</strong> - <em>DESIGNATION @ BAF</em> | Special Coordination & Support</li>
+        <li><strong>JSR NAIM SIR</strong> - <em>DESIGNATION @ BAF</em> | Technical Consultation & Feedback</li>
+        <li><strong>ENG. TEAM SIR</strong> - <em>DESIGNATION @ BAF</em> | Engineering Infrastructure Support</li>
+        <li><strong>RASHEKUL SIR</strong> - <em>DESIGNATION @ BAF</em> | Logistics & Operational Oversight</li>
+    </ul>
+
+</div>
+
+</body>
+</html>

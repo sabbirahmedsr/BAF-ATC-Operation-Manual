@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01. Introduction</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Simulator Menu</h3>
+    <a href="../index.html">00. Index/Dashboard</a>
+    <a href="01_Introduction.html">01. Introduction</a>
+    <a href="02_Installation.html">02. Installation</a>
+    <a href="03_GettingStarted.html">03. Getting Started</a>
+    <a href="04_Interface.html">04. Interface</a>
+    <a href="05_Aircraft_Ops.html">05. Aircraft Ops</a>
+    <a href="06_Weather_&_Time.html">06. Weather & Time</a>
+    <a href="07_Special_Showcase.html">07. Special Showcase</a>
+    <a href="08_VFX_&_Fun.html">08. VFX & Fun</a>
+    <a href="09_Help_&_Support.html">09. Help & Support</a>
+    <a href="10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="../full_manual.html">99. Print Full Manual</a>
+</div>
+
+<div class="page-container">
+    <h1>01. Introduction</h1>
+
+    <h3>1.1 System Overview</h3>
+    <p>The BAF ATC Simulator is designed to provide a highly immersive and realistic environment for live, interactive air traffic control training. The system features a comprehensive 180-degree field of view, allowing trainees to monitor a vast portion of the airfield simultaneously, replicating the authentic experience of an actual control tower, as shown below:</p>
+    <img src="../Images/BAF_ATC_Simulator_180_Degree_View.jpg" alt="180 Degree View">
+
+    <h3>1.2 System Architecture</h3>
+    <p>The simulator operates as a distributed multi-node network, featuring three primary stations integrated with a 180-degree Panoramic Trio View designed to replicate actual airport tower view.</p>
+    <ul>
+        <li><strong>Server Station:</strong> Acts as the central hub, managing the live 180-degree scenario, environmental conditions, and weather control systems.</li>
+        <li><strong>Arrival Station:</strong> Functions as a client node for real-time monitoring of arrival traffic, executing pseudo-pilot control commands, and triggering pre-recorded pilot voice communications.</li>
+        <li><strong>Departure Station:</strong> Functions as a client node for real-time monitoring of departure traffic, executing pseudo-pilot control commands, and triggering pre-recorded pilot voice communications.</li>
+        <li><strong>Panoramic Trio View:</strong> Consists of three large-scale high-definition displays connected to the server, which provide a seamless, panoramic 180-degree view that replicates the immersive perspective of an actual airport control tower.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h3>1.3 Operational Airfield Scenarios</h3>
+    <p>The simulator currently features two high-fidelity airport environments, with support for integrated day/night cycles and dynamic weather systems (e.g., fog, storms, and atmospheric effects like rainbows).</p>
+
+    <h5>Hazrat Shahjalal International Airport (VGHS)</h5>
+    <img src="../Images/VGHS_Panoramic_View.jpg" alt="VGHS Panoramic View">
+
+    <h5>Jashore Airport (VGJR)</h5>
+    <img src="../Images/VGJR_Panoramic_View.jpg" alt="VGJR Panoramic View">
+
+    <h5>Night Operations</h5>
+    <img src="../Images/Night_Mode_View.jpg" alt="Night Operations">
+
+    <h5>Adverse Weather Conditions</h5>
+    <img src="../Images/Stormy_Weather_View.jpg" alt="Stormy Weather">
+
+    <div class="page-break"></div>
+
+    <h3>1.4 Training Philosophy</h3>
+    <p>This simulator focuses on <strong>live, hands-on training</strong> to bridge the gap between theoretical knowledge and operational reality. By providing a highly <strong>interactive scenario-based environment</strong>, the system allows ATC students to practice real-world decision-making. Trainees can engage directly with the simulator, managing dynamic traffic situations and airport operations in a controlled yet authentic setting.</p>
+    <ul>
+        <li><strong>Hands-on Experience:</strong> Practical engagement with ATC systems.</li>
+        <li><strong>Interactive Scenarios:</strong> Dynamic environments that mimic real-life challenges.</li>
+        <li><strong>Operational Readiness:</strong> Focused training to ensure students are prepared for actual air traffic control responsibilities.</li>
+    </ul>
+
+    <h3>1.5 Technical Stack</h3>
+    <ul class="stack-list">
+        <li><strong>Core Engine:</strong> Unity 6000.2.8f1</li>
+        <li><strong>Rendering Pipeline:</strong> Built-in Render Pipeline</li>
+        <li><strong>Networking Architecture:</strong> Fishnet Networking</li>
+        <li><strong>3D Modeling & Design:</strong> Blender, 3ds Max</li>
+        <li><strong>UI/UX Design:</strong> Unity Native UI System</li>
+        <li><strong>Asset Creation & Texturing:</strong> Adobe Photoshop, Photopea</li>
+        <li><strong>Audio Engineering:</strong> Audacity</li>
+        <li><strong>Version Control & CI/CD:</strong> Git (GitHub, GitLab)</li>
+        <li><strong>Development Environment:</strong> Visual Studio 2022</li>
+        <li><strong>Target Operating System:</strong> Windows 10/11 Pro</li>
+    </ul>
+
+    <h3>1.6 Development Credits</h3>
+    <ul class="stack-list">
+        <li><strong>Developer:</strong> Azmi Studio</li>
+        <li><strong>Client:</strong> Bangladesh Air Force (BAF)</li>
+        <li><strong>Purpose:</strong> Providing an immersive environment for advanced ATC training.</li>
+    </ul>
+</div>
+
+</body>
+</html>

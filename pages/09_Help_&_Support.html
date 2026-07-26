@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10. Support</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Simulator Menu</h3>
+    <a href="../index.html">00. Index/Dashboard</a>
+    <a href="01_Introduction.html">01. Introduction</a>
+    <a href="02_Installation.html">02. Installation</a>
+    <a href="03_GettingStarted.html">03. Getting Started</a>
+    <a href="04_Interface.html">04. Interface</a>
+    <a href="05_Aircraft_Ops.html">05. Aircraft Ops</a>
+    <a href="06_Weather_&_Time.html">06. Weather & Time</a>
+    <a href="07_Special_Showcase.html">07. Special Showcase</a>
+    <a href="08_VFX_&_Fun.html">08. VFX & Fun</a>
+    <a href="09_Help_&_Support.html">09. Help & Support</a>
+    <a href="10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="../full_manual.html">99. Print Full Manual</a>
+</div>
+
+
+<div class="page-container">
+    <h1>09. Help & Support</h1>
+
+    <div class="support-intro">
+        <p>At <strong>Azmi Studio</strong>, our team is deeply committed to ensuring your experience is flawless. We are always available to provide dedicated support and technical guidance whenever you need us. Your project success is our priority, and we are only a message away.</p>
+        
+        <p><strong>How to Reach Us:</strong></p>
+        <ul>
+            <li><strong>Organization:</strong> Azmi Studio</li>
+            <li><strong>Email Address:</strong> info@azmistudio.com</li>
+            <li><strong>Technical Support Line:</strong> 01302609091</li>
+        </ul>
+    </div>
+
+    <hr>
+
+
+
+    <h3>9.1 System Verification Checklist</h3>
+    <p>While our support team is always available to assist you, we encourage you to perform these quick checks first if you encounter any irregularities. Although these steps seem very simple, we often <strong>overlook or accidentally miss</strong> these basic details during operation. Verifying these common points can quickly <strong>resolve many issues</strong> or at least make the system ready for the next stage even before you need professional assistance.</p>
+    <ul>
+        <li><strong>Power:</strong> Check that all power switches are turned on.</li>
+        <li><strong>Cables:</strong> Make sure all video, controller, and device cables are <strong>plugged in firmly</strong>.</li>
+        <li><strong>Sound:</strong> Verify speakers are connected and the <strong>volume is not muted</strong> from any point.</li>
+        <li><strong>Network:</strong> Ensure the network cable is connected and the network switch is powered on.</li>
+        <li><strong>MASTER CHECK:</strong> Confirm that <strong>all hardware and peripherals are functioning correctly within the operating system</strong> before launching our software.</li>
+        <li><strong>System:</strong> Ensure the server computer is running and the software is launched.</li>
+    </ul>
+    <div class="note">
+        <strong>Note:</strong> While it may seem simple, but <strong>Restart often works like magic</strong>. If you encounter any unexpected issues, we highly recommend <strong>powering off the entire system</strong> completely, <strong>waiting for a while</strong>, and then performing a <strong>fresh restart</strong>. This simple step often resolves most common irregularities before you even need to call for support.
+    </div>
+
+
+    <hr class="page-break">
+
+    <h3>9.2 Common Troubleshooting</h3>
+    <p>After verifying the system checklist, if you still encounter any irregularities, <strong>do not worry</strong>—you are already familiar with the setup and can often resolve these minor issues yourself. While the following steps are <strong>not guaranteed "fixes"</strong> for every scenario, they are effective workarounds that resolve most common hiccups. Give them a <strong>try first</strong>, and if the problem persists, our support team is always here to provide <strong>expert assistance</strong>.</p>
+
+    <h4>1. Any or all of 3 Large TVs showing "No Signal" or `No HDMI output`</h4>
+    <p><strong>Likely Cause:</strong> The system failed to detect the display, often because the <strong>TV was turned off</strong> during the <strong>server boot process</strong>.</p>
+    <p><strong>Corrective Action:</strong> Perform a <strong>full power cycle</strong>. Completely <strong>shut down</strong> the entire system, wait for a while, and then <strong>power on the TVs first</strong>. Once all screens are <strong>active</strong>, boot the <strong>server computer</strong> again.</p>
+
+    <hr>
+
+    <h4>2. Mis-arrangement of Screen Layout (Panoramic view looks scrambled)</h4>
+    <p><strong>Likely Cause:</strong> Our <strong>software and system</strong> require the monitors to be connected in a <strong>very specific order</strong>. This issue occurs if the display configuration has been <strong>reset</strong>, the cables were <strong>swapped</strong>, or the system <strong>misidentified</strong> the display sequence during startup.</p>
+    <p><strong>Corrective Action:</strong> Right-click on your <strong>desktop</strong> and select <strong>Display Settings</strong>. Scroll down to the <strong>Multiple displays</strong> section and click the <strong>Identify</strong> button. This will display a large number on each screen so you can verify the current order (Standard monitor should be <strong>1</strong>, and the 180° panorama TVs should be <strong>2, 3, and 4</strong> respectively). If the order is incorrect, <strong>shuffle the HDMI cables</strong> at the back of the server pc to match the required sequence. Restart the system once finished to ensure the software <strong>re-detects the correct layout</strong>.</p>
+
+    <div class="note">
+        <strong>Note:</strong> Since Windows does not always assign a <strong>fixed port-to-output index</strong>, shuffling cables can be a <strong>trial-and-error process</strong>. Adding or moving a cable may sometimes change the <strong>display number</strong> unexpectedly, so you may need to repeat the <strong>Identify</strong> process until the sequence is correctly aligned.<br><br>
+        <strong>Tips:</strong> Instead of changing <strong>HDMI cables</strong>, sometimes <strong>switching the 3 TVs physical position</strong> might be a faster way to achieve the correct order.</p>
+    </div>
+
+    <hr class="page-break">
+
+
+
+    <h4>3. Simulator Application Fails to Launch</h4>
+    
+    <p><strong>Likely Cause:</strong> The <strong>source files</strong> might have been moved, renamed, or deleted from the <strong>original directory</strong>. As this is a <strong>Unity-based build</strong>, the application requires all supporting files to remain in their <strong>original location</strong> to function.</p>
+    
+    <p><strong>Corrective Action:</strong> Verify the <strong>original installation folder</strong> to ensure all components are present, as listed in the <strong>Directory Structure</strong> (Section 2.2). Check that the <strong>BAF ATC Simulator_Data</strong> folder and all core files (such as <strong>UnityPlayer.dll</strong>) are intact. If the structure has been altered, move the files back to their <strong>original path</strong>. Finally, launch the application as an <strong>administrator</strong> directly from the <strong>BAF ATC Simulator.exe</strong> file.</p>
+
+     <div class="note">
+        <strong>Note:</strong> If the issue persists, the best practice is to extract the <strong>original zip file</strong> again into a new folder to ensure a <strong>fresh installation</strong> and resolve any potential file corruption or path errors. That is why, we always recommend you that you <strong>never lose or delete the original zip file</strong>, even if the system is working perfectly.</p>
+     </div>
+
+    <hr>
+
+
+    <h4>4. Graphical Lag or Stuttering</h4>
+    
+    <p><strong>Likely Cause:</strong> This is often caused by the <strong>GPU overheating</strong> during long hours of operation, or outdated <strong>graphics drivers</strong> failing to handle the rendering load.</p>
+    
+    <p><strong>Corrective Action:</strong> Ensure the <strong>server environment</strong> has proper ventilation to prevent the <strong>GPU from overheating</strong>. Update your <strong>graphics drivers</strong> to the latest version and verify that the <strong>Power Management Mode</strong> is set to "High Performance." In the simulator's main settings menu, locate the <strong>Quality</strong> dropdown and switch to a <strong>lower quality level</strong> to stabilize the frame rate.</p>
+     
+    <hr>
+
+
+    <h4>5. Airplane or Map Misplacement</h4>
+    <p><strong>Likely Cause:</strong> This occurs if the <strong>server station</strong> and the <strong>client stations</strong> are loaded with different <strong>airport maps</strong> (e.g., one is running <strong>VGHS</strong> while another is on <strong>VGJR</strong>).</p>
+    <p><strong>Corrective Action:</strong> Before starting your session, ensure that every connected station (both server and all clients) has selected and loaded the <strong>exact same airport map</strong>. If the airplane appears misplaced, <strong>stop the simulation</strong>, confirm that everyone is on the <strong>same airport</strong>, and <strong>restart the session</strong> to ensure proper synchronization.</p>
+
+    <hr class="page-break">
+    
+    <h4>6. Audio Output Issues</h4>
+    
+    <p><strong>Likely Cause:</strong> The issue may arise from <strong>incorrect sound device selection</strong> in the operating system, a muted channel, or a loose connection in the <strong>audio interface</strong>.</p>
+    
+    <p><strong>Corrective Action:</strong> Ensure the system volume is <strong>not muted</strong> at any point. Select the correct <strong>output device</strong> in <strong>Windows Sound settings</strong>. If audio is still missing, check the physical connections between the server and the audio interface.</p>
+
+    <div class="note">
+        <strong>Note:</strong> Our system uses the <strong>left and right audio channels separately</strong>. To ensure both are working correctly, please play a <strong>"Left/Right Speaker Test"</strong> audio (available on YouTube / or from anywhere) to verify that your audio interface and cables are working properly, without even lanching our software.
+    </div>
+    
+    <hr>
+
+    <h4>7. Pilot Call Is Not Playing</h4>
+    <p><strong>Likely Cause:</strong> The specific audio data might be missing from the files. However, this is a critical component and <strong>should never happen</strong> under normal operation.</p>
+    <p><strong>Corrective Action:</strong> First, ensure that your <strong>audio output is working properly</strong> by following the steps in Section 6. If the audio is confirmed to be working but the pilot call still fails to play, please document the issue by noting the <strong>call sign</strong>, the <strong>flight phase</strong> (e.g., taxi, departure, arrival), and the specific <strong>audio message</strong> that is missing. If possible, capture a <strong>screenshot</strong> of the simulation state when the error occurred and share these details with the development team for analysis.</p>
+    
+    <div class="note">
+        <p><strong>Still facing issues?</strong> If the issue is not yet resolved or you encounter any complex <strong>scenario</strong>, do not hesitate to contact our technical support line. We are here to help!</p>
+    </div>
+
+
+     <hr class="page-break">
+
+    <h3>9.3 The Hidden Problem Solver Hero</h3>
+    <p>We haven’t just delivered the software and walked away; we are with you every step of the way. Our system operates as a silent sentinel in the background, constantly monitoring performance to ensure everything runs smoothly. Most of the time, you won’t even know it’s there.</p>
+
+    <img src="../Images/In_Game_Console_Error.jpg" alt="In Game Console Error.">
+
+    <p>However, in the rare event that an error occurs, our hidden "hero"—the <strong>In-Game Debug Console</strong>—will instantly appear. We genuinely hope you never have to encounter it, but if a glitch happens, this console is your direct line to a quick resolution.</p>
+
+    <h4>System Workflow:</h4>
+    <ol>
+        <li><strong>Detection:</strong> The system detects an operational error.</li>
+        <li><strong>Alert:</strong> The small, red <strong>"Problem Solver Icon"</strong> (visible on the right side of the diagram) appears on the screen, indicating a critical issue.</li>
+        <li><strong>Expansion:</strong> Clicking this small <strong>"Problem Solver Icon"</strong> expands the full <strong>In-Game Debug Console</strong> across the screen. This large view displays detailed technical logs, allowing you to view and, if necessary, copy specific troubleshooting details.</li>
+    </ol>
+
+    <h4>How to use it if an issue arises:</h4>
+    <ul>
+        <li><strong>Capture the Issue:</strong> If the <strong>In-Game Debug Console</strong> pops up or is expanded, please take a <strong>screenshot</strong> of the entire view, including the detailed log messages.</li>
+        <li><strong>Copy the Reason:</strong> We have made it simple to copy the exact error message text directly from the logs. <strong>Copying this text</strong> is crucial for us, as it contains the technical "DNA" of the problem.</li>
+        <li><strong>Notify Us:</strong> Send the <strong>screenshot</strong> and the <strong>copied error details</strong> to our support team, and we will deal the rest within a very short time.</li> 
+    </ul>
+
+</div>
+
+</body>
+</html>

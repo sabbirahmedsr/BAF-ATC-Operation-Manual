@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04. Interface</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Simulator Menu</h3>
+    <a href="../index.html">00. Index/Dashboard</a>
+    <a href="01_Introduction.html">01. Introduction</a>
+    <a href="02_Installation.html">02. Installation</a>
+    <a href="03_GettingStarted.html">03. Getting Started</a>
+    <a href="04_Interface.html">04. Interface</a>
+    <a href="05_Aircraft_Ops.html">05. Aircraft Ops</a>
+    <a href="06_Weather_&_Time.html">06. Weather & Time</a>
+    <a href="07_Special_Showcase.html">07. Special Showcase</a>
+    <a href="08_VFX_&_Fun.html">08. VFX & Fun</a>
+    <a href="09_Help_&_Support.html">09. Help & Support</a>
+    <a href="10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="../full_manual.html">99. Print Full Manual</a>
+</div>
+
+
+<div class="page-container">
+    
+    <h1>04. Interface</h1>
+
+    <p>The simulator interface is designed to be simple and organized. It is divided into various sections to facilitate smooth interaction and inspection. Every panel displays its <strong>Name</strong> at the <strong>Top-Left Corner</strong> for quick identification. The main panels include the <strong>Radar Map</strong> and <strong>Surface Map</strong>, the <strong>Info Panel</strong>, the <strong>Console</strong> (Server only), and the <strong>Strip Panel</strong>(Client only) and <strong>Command Panel</strong> (Client only).</p>
+
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="../Images/Server_Interaface.png" alt="Simulator Interface">
+    </div>
+
+    <hr>
+
+    <h3>4.1 Radar & Surface Map Panels</h3>
+
+    <p>The map panels are the central part of the interface, providing essential tactical data for air traffic control.</p>
+
+    <ul>
+        <li><strong>Radar Map:</strong> Located on the <strong>Left Side</strong>, half of the screen, provides a comprehensive TMA view, from <strong>12NM</strong> up to <strong>50NM</strong> (when available), essential for tracking aircraft positions, identifying navigation aids, and monitoring flight paths within the approach and departure corridors.</li>
+        <li><strong>Surface Map:</strong> Positioned on the <strong>Bottom-Right</strong>, occupies half of the vertical and horizontal area. It provides a detailed airfield layout, allowing operators to visualize taxiways, runways, and parking areas to manage ground movements effectively.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <p>Both panels feature two critical control dropdowns at the <strong>top-right corner</strong>  to customize your view:</p>
+
+    <ul>
+        <li><strong>Theme:</strong> Toggle between <strong>[NONE]</strong>, <strong>[LIGHT]</strong>, <strong>[DARK]</strong>, or <strong>[S-MAP (SATELLITE)]</strong> modes.</li>
+        <li><strong>Range/View:</strong> Dynamic controls based on the map type:
+            <ul>
+                <li><strong>Radar Map:</strong> Adjust the radar range (e.g., 50NM, 25NM, 12NM) for required coverage.</li>
+                <li><strong>Surface Map:</strong> Toggle between specific ground views like <strong>Runway</strong> or <strong>Parking</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <hr>
+
+    <h3>4.2 Information Panel</h3>
+    <p>Located at the <strong>Top-Middle</strong> of the screen, this panel displays essential real-time data and scoring for all stations. It tracks <strong>ATC Time</strong>, <strong>Elapsed Time</strong>, and <strong>Date</strong>. Additionally, the <strong>Server</strong> shows total <strong>Arrival/Departure</strong> scores, while the <strong>Client</strong> shows station-specific performance metrics.</p>
+
+
+    <ul>
+        <li><strong>Data Display:</strong> It tracks the current <strong>ATC Time</strong>, <strong>Elapsed Time</strong>, and <strong>Date</strong>. These metrics are vital for pilots to coordinate activities such as startup requests or taxi timing.</li>
+        <li><strong>Performance Metrics:</strong> 
+            <ul>
+                <li><strong>Server View:</strong> Displays total system <strong>Arrival</strong> and <strong>Departure</strong> scores for overall monitoring.</li>
+                <li><strong>Client View:</strong> Displays performance scores specific to the assigned station's role.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>4.3 Console Panel (Server Only)</h3>
+
+    <p>Located on the <strong>Top-Right</strong>, this panel is the central monitoring hub for the Server. This is exclusive to the Server station for system-wide monitoring.</p>
+
+    <ul>
+        <li><strong>Event Logging:</strong> This section continuously lists system activities, such as network updates, aircraft spawning, and flight data management.</li>
+        <li><strong>Connection Status:</strong> Located at the top, two circular indicators show real-time client connectivity. <strong>[GRAY]</strong> means disconnected, while <strong>[GREEN]</strong> confirms an active connection.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <h3>4.4 Strip & Command Panels (Client Only)</h3>
+
+    <p>Located on the <strong>Right Side</strong> of the screen, these panels are exclusive to the Client station for managing active flight operations.</p>
+
+    <ul>
+        <li><strong>Strip Panel:</strong> Positioned in the <strong>Center-Right</strong> area (below the <strong>Info Panel</strong>), this panel displays electronic flight strips for all active aircraft, providing a quick summary of essential flight information and status updates.</li>
+        <li><strong>Command Panel:</strong> Positioned at the <strong>Top-Right</strong>, this is the main interaction hub. It allows you to send instructions to aircraft, including movement confirmations with parameters, playing pre-recorded pilot calls, adjusting height, deleting flights, pausing tasks, and highlighting specific targets for monitoring.</li>
+    </ul>
+
+    <hr>
+
+    <h3>4.5 Options Menu</h3>
+    <p>Located at the <strong>Bottom-Left</strong>, look alike a <strong>List Icon</strong>, provides access to essential system tools:</p>
+    <ul>
+        <li><strong>General:</strong> Application exit and configuration.</li>
+        <li><strong>Server-Only:</strong> Controls for <strong>Global Pause</strong>, <strong>Weather</strong> setup, and traffic <strong>Sequence</strong> loading.</li>
+        <li><strong>Speed Control:</strong> A slider at the bottom adjusts the global simulation speed.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> The current simulation speed is displayed in the <strong>Info Panel</strong>. If the speed is set to anything other than <strong>1x</strong>, the indicator highlights with a <strong>Red Background</strong> to warn the operator.
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> If the simulation appears frozen or aircraft are not moving, always check if the <strong>Global Pause</strong> is active. It is common to overlook this, so ensure the system is not paused before troubleshooting other issues.
+    </div>
+
+</div>
+
+</body>
+</html>

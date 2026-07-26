@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06. Weather & Time</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>Simulator Menu</h3>
+    <a href="../index.html">00. Index/Dashboard</a>
+    <a href="01_Introduction.html">01. Introduction</a>
+    <a href="02_Installation.html">02. Installation</a>
+    <a href="03_GettingStarted.html">03. Getting Started</a>
+    <a href="04_Interface.html">04. Interface</a>
+    <a href="05_Aircraft_Ops.html">05. Aircraft Ops</a>
+    <a href="06_Weather_&_Time.html">06. Weather & Time</a>
+    <a href="07_Special_Showcase.html">07. Special Showcase</a>
+    <a href="08_VFX_&_Fun.html">08. VFX & Fun</a>
+    <a href="09_Help_&_Support.html">09. Help & Support</a>
+    <a href="10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="../full_manual.html">99. Print Full Manual</a>
+</div>
+
+<div class="page-container">
+    <h1>06. Weather & Time</h1>
+    <p>The ATC Simulator integrates a highly sophisticated, <strong>procedural sky and weather system</strong>. This architecture enables <strong>real-time</strong> atmospheric manipulation, delivering a deeply immersive environment. The following illustration depicts a <strong>typical foggy day</strong>, which creates an exceptaional challenging situation for an ATC with <strong>low visibility</strong>, demonstrating the system's dynamic rendering capabilities.</p>
+    
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="../Images/Weather_Panorama_Foggy_Day.jpg" alt="Dense Foggy Weather">
+    </div>
+
+    <p>To access the environmental controls, navigate to the <strong>Sky and Weather</strong> panel via the <strong>options menu</strong> (located at the <strong>bottom-left</strong> corner of the interface, indicated by a <strong>list icon</strong>), or simply utilize the keyboard shortcut <strong>Ctrl + W</strong>.</p>
+    
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="../Images/Weather_Setting.jpg" alt="Weather Control Interface">
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> If you find the extensive settings overwhelming, it is always recommended to select a pre-configured weather profile for a quick and consistent setup.
+    </div>
+   
+    <hr class="page-break">
+
+    <h3>6.1 Weather Profiles (Presets)</h3>
+    <p>For rapid configuration, the simulator includes ten pre-configured weather profiles. You can easily select these from the <strong>"Weather Profile" dropdown menu</strong>, located at the <strong>top section</strong> of the <strong>Sky and Weather</strong> control popup. A short description of each is as follows:</p>
+    <ul>
+        <li><strong>Default:</strong> Standard atmospheric conditions for routine training.</li>
+        <li><strong>Sunny Day:</strong> Clear skies with optimal visibility.</li>
+        <li><strong>Cloudy Day:</strong> Partially overcast skies with light cloud coverage.</li>
+        <li><strong>Overcast:</strong> Dense cloud coverage reducing overall brightness.</li>
+        <li><strong>Rainy Day:</strong> Moderate rainfall with associated atmospheric effects.</li>
+        <li><strong>Storm:</strong> Intense weather with heavy rain, low visibility, and lightning.</li>
+        <li><strong>Dark Night:</strong> Standard night environment with minimal ambient light.</li>
+        <li><strong>Moonlit Night:</strong> Night operation with significant illumination from the moon.</li>
+        <li><strong>Foggy:</strong> Low visibility conditions simulating ground-level mist.</li>
+        <li><strong>Rainbow:</strong> A specialized post-rain visual effect.</li>
+        <li><strong>Aurora:</strong> An experimental atmospheric effect for visual variety.</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.2 Custom Settings (Advanced)</h3>
+    <p>For advanced users requiring specific training environments, the system offers granular control over time, location, and atmospheric parameters. These settings are categorized within the <strong>Sky and Weather</strong> control interface.</p>
+
+    <h4>Time and Location</h4>
+    <p>This module allows for precise calibration of the simulation's temporal and geographical state. Specially you can set <strong>Day/Night mode</strong> from here using <strong>Hour of day</strong> slider.</p>
+    <ul>
+        <li><strong>Month of Year:</strong> Sets the calendar month to adjust seasonal lighting and environment.</li>
+        <li><strong>Day of Month:</strong> Defines the specific day to adjust sun positioning and lunar cycles.</li>
+        <li><strong>Hour of Day:</strong> Manually selects the time to simulate dawn, daylight, dusk, or night.</li>
+        <li><strong>Auto Change Speed:</strong> Controls the progression rate of the dynamic time system.</li>
+        <li><strong>Latitude & Longitude:</strong> Sets the precise geographical coordinates of the airport.</li>
+        <li><strong>Orientation:</strong> Rotates the global celestial direction to match runway headings.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <div class="note">
+        <strong>Tip:</strong> Use the <strong>Auto Change Speed</strong> slider to create dynamic, time-lapse scenarios that test a trainee's adaptability to changing light conditions.
+    </div>
+
+    <hr>
+
+    <h4>Cloud Setting</h4>
+    <p>This section provides comprehensive control over cloud formations, density, and movement to realistically simulate various sky conditions.</p>
+
+    <h5>Basic Cloud</h5>
+    <ul>
+        <li><strong>Alto Stratus Amount:</strong> Adjusts the density and coverage of mid-level stratus clouds.</li>
+        <li><strong>Cirrus Amount:</strong> Controls the visibility and spread of high-altitude wispy clouds.</li>
+        <li><strong>Cumulus Amount:</strong> Defines the quantity and prominence of puffy, low-level clouds.</li>
+        <li><strong>Cloud Scale:</strong> Sets the overall size and uniformity of the cloud formations.</li>
+    </ul>
+
+    <h5>Cumulus Parameter</h5>
+    <ul>
+        <li><strong>Quality:</strong> Determines the rendering fidelity and sharpness of cumulus clouds.</li>
+        <li><strong>Details:</strong> Adjusts the structural complexity and graininess of cloud textures.</li>
+        <li><strong>Frequency:</strong> Sets the occurrence rate of cloud patches across the sky.</li>
+        <li><strong>Speed:</strong> Controls the velocity at which clouds drift across the horizon.</li>
+        <li><strong>Direction:</strong> Defines the movement heading of the clouds to match wind flow.</li>
+    </ul>
+
+    <p>The following visualization demonstrates the system's dynamic rendering capabilities, showcasing a realistic cloudscape achieved through precise adjustments of the <strong>Basic Cloud</strong> and <strong>Cumulus Parameter</strong> settings.</p>
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="../Images/Weather_Panorama_Cloudy_Day.jpg" alt="Dynamic Cloudy Weather">
+    </div>
+    
+    <hr class="page-break">
+
+
+
+
+
+    <h4>Weather Setting</h4>
+    <p>This module provides control over atmospheric conditions, allowing for the simulation of diverse meteorological scenarios to challenge ATC operations.</p>
+
+    <ul>
+        <li><strong>Fog Density:</strong> Adjusts the thickness of ground-level mist to limit visual range.</li>
+        <li><strong>Humidity:</strong> Sets the moisture level in the air affecting atmospheric clarity.</li>
+        <li><strong>Temperature:</strong> Defines the ambient thermal state, influencing overall weather behavior.</li>
+    </ul>
+
+    <ul>
+        <li><strong>Overcast Amount:</strong> Sets the intensity of cloud cover obscuring direct sunlight.</li>
+        <li><strong>Rain Amount:</strong> Controls the volume and intensity of rainfall.</li>
+        <li><strong>Lightning:</strong> Adjusts the frequency and intensity of lightning strikes during storms.</li>
+    </ul>
+
+    <ul>
+        <li><strong>Snow Amount:</strong> Sets the volume and accumulation intensity of snowfall.</li>
+        <li><strong>Rainbow:</strong> Toggles the intensity of the rainbow effect post-precipitation.</li>
+        <li><strong>Wind Amount:</strong> Controls the velocity and strength of wind gusts across the airfield.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> Some parameters may overlap on other parameter. For example, setting <strong>Overcast Amount</strong> to its maximum will fully cover the sky, so you can not see any changes made on <strong>Cumulus</strong> or <strong>Cirrus</strong> setting.
+    </div>
+
+    <hr>
+
+
+
+
+    <h4>Sound Setting</h4>
+    <p>This section allows users to balance the audio output of the simulation, ensuring optimal clarity for training exercises as shown in <strong>image_16377d.png</strong>.</p>
+    <ul>
+        <li><strong>Master Volume:</strong> Adjusts the global audio output level for the entire simulation.</li>
+        <li><strong>Wind Volume:</strong> Controls the intensity of ambient wind audio effects.</li>
+        <li><strong>Day Volume:</strong> Sets the background sound levels for daytime environment presets.</li>
+        <li><strong>Night Volume:</strong> Defines the volume level for nighttime ambient soundscapes.</li>
+        <li><strong>Rain Volume:</strong> Adjusts the audio prominence of precipitation effects.</li>
+        <li><strong>Thunder Volume:</strong> Controls the impact and volume of storm-related thunder sounds.</li>
+    </ul>
+
+    <hr class="page-break">
+
+
+
+
+
+
+    <h4>More Parameter</h4>
+    <p>This section provides advanced lighting adjustments to fine-tune the visual environment.</p>
+    <ul>
+        <li><strong>Day Sky Light:</strong> Adjusts the brightness of the sky during daytime.</li>
+        <li><strong>Day Surface Light:</strong> Controls the intensity of ground surface light during the day.</li>
+        <li><strong>Night Sky Light:</strong> Modifies the luminosity of the sky during nighttime.</li>
+        <li><strong>Night Surface Light:</strong> Regulates the brightness of ground surfaces during night.</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.3 Additional Controls</h3>
+    <p>At the bottom of the popup, additional utility functions are available to manage the environment:</p>
+    <ul>
+        <li><strong>Light : ON/OFF:</strong> Toggles the simulation's artificial lighting systems.</li>
+        <li><strong>Random:</strong> Generates a randomized weather profile for unpredictable training scenarios.</li>
+        <li><strong>Reset All:</strong> Reverts all atmospheric settings to the system default.</li>
+        <li><strong>Back:</strong> Closes the weather popup and returns to the previous menu.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> Since the system is procedural and runtime-based, changes made to custom settings will take effect immediately without requiring a restart of the simulation.
+    </div>
+
+    <hr>
+
+    <h3>6.4 Day/Night Operation</h3>
+    <p>Users can manage time and lighting conditions through two primary methods:</p>
+    <ul>
+        <li><strong>Weather Presets:</strong> Quickly select scenarios like <strong>Dark Night</strong> or <strong>Moonlit Night</strong> for instant environmental changes. For twist, <strong>Stormy Day</strong> also make the light as dark as night.</li>
+        <li><strong>Custom Settings (Advanced):</strong> Use the <strong>Time and Location</strong> module in the <strong>Sky and Weather</strong> interface, where the <strong>Hour of Day</strong> slider allows manual transitions between <strong>dawn, daylight, dusk, and night cycles.</strong></li>
+    </ul>
+
+
+</div>
+
+
+</body>
+</html>
