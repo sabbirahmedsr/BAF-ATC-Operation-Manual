@@ -6,12 +6,13 @@ files = [
     'pages/02_Installation.html',
     'pages/03_GettingStarted.html',
     'pages/04_Interface.html',
-    'pages/05_AircraftOps.html',
+    'pages/05_Aircraft_Ops.html',
     'pages/06_Weather_&_Time.html',
     'pages/07_Special_Showcase.html',
     'pages/08_VFX_&_Fun.html',
     'pages/09_Help_&_Support.html',
-    'pages/10_Acknowledgements.html'
+    'pages/10_Acknowledgements.html',
+    'pages/11_Attachment.html'
 ]
 
 output_file = 'full_manual.html'
@@ -30,6 +31,7 @@ def generate_full_manual():
     <a href="pages/08_VFX_&_Fun.html">08. VFX & Fun</a>
     <a href="pages/09_Help_&_Support.html">09. Help & Support</a>
     <a href="pages/10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="pages/11_Attachment.html">11. Attachement</a>
     <a href="./full_manual.html">99. Print Full Manual</a>
 </div>"""
 

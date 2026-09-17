@@ -23,6 +23,7 @@
     <a href="pages/08_VFX_&_Fun.html">08. VFX & Fun</a>
     <a href="pages/09_Help_&_Support.html">09. Help & Support</a>
     <a href="pages/10_Acknowledgements.html">10. Acknowledgements</a>
+    <a href="pages/11_Attachment.html">11. Attachement</a>
     <a href="./full_manual.html">99. Print Full Manual</a>
 </div>
 
@@ -41,7 +42,7 @@
             <tbody>
                 <tr><td>01</td><td><strong>Introduction</strong></td><td>System Overview</td><td>Scope, software version, and hardware setup.</td></tr>
                 <tr><td>02</td><td><strong>Installation</strong></td><td>System Setup</td><td>Software installation and prerequisite configuration.</td></tr>
-                <tr><td>03</td><td><strong>Getting Started</strong></td><td>Launch The Application</td><td>Step-by-step startup sequence for hardware and software.</td></tr>
+                <tr><td>03</td><td><strong>Getting Started</strong></td><td>Launch The Application</td><td>Step-by-step startup sequence for the system.</td></tr>
                 <tr><td>04</td><td><strong>Interface</strong></td><td>Dashboard Layout</td><td>Overview of the control interface and navigation.</td></tr>
                 <tr><td>05</td><td><strong>Aircraft Ops</strong></td><td>Flight Management</td><td>Create, operate, play pilot call, and delete aircraft.</td></tr>
                 <tr><td>06</td><td><strong>Weather & Time</strong></td><td>Environmental Control</td><td>Modifying weather, visibility, and time of day.</td></tr>
@@ -49,10 +50,11 @@
                 <tr><td>08</td><td><strong>VFX & Fun</strong></td><td>Visual Effects</td><td>Flying passes, fireworks, and other atmospheric effects.</td></tr>
                 <tr><td>09</td><td><strong>Help & Support</strong></td><td>Troubleshooting</td><td>Fixing common system or display issues.</td></tr>
                 <tr><td>10</td><td><strong>Acknowledgements</strong></td><td>Project Credits</td><td>Team members and contributor recognition.</td></tr>
+                <tr><td>11</td><td><strong>Attachment</strong></td><td>Additional Data</td><td>Diagram, flow chart & other.</td></tr>
             </tbody>
         </table>
     
-    <div class="footer">&copy; 2026 BAF ATC Simulator Project | Operation Manual Index</div>
+     <div class="footer">&copy; 2026 BAF ATC Simulator Project | Operation Manual Index</div>
 </div>
 <div class="page-container">
     <h1>01. Introduction</h1>
@@ -329,6 +331,174 @@
     <div class="note">
         <strong>Note:</strong> If the simulation appears frozen or aircraft are not moving, always check if the <strong>Global Pause</strong> is active. It is common to overlook this, so ensure the system is not paused before troubleshooting other issues.
     </div>
+
+</div>
+<div class="page-container">
+    <h1>05. Aircraft Ops</h1>
+
+
+    <h3>5.1 Aircraft Creation</h3>
+    <p>To add a new aircraft to the simulation, look at the <strong>Bottom-left corner</strong> of the <strong>Client station</strong>. You will see a <strong>Plus (+)</strong> icon, right next to the Options button. Clicking this icon will trigger the <strong>CREATE AIRCRAFT</strong> popup window. Here, you can set the following details:</p>
+    <ul>
+        <li><strong>Category:</strong> Choose the type of flight (e.g., <strong>Domestic</strong>, <strong>International</strong>, <strong>Military</strong>, etc.).</li>
+        <li><strong>Call Sign:</strong> Select the unique flight ID (e.g., <strong>BG367</strong>, <strong>THAI321</strong>, <strong>GFN391</strong>, <strong>ABC668</strong>, etc.).</li>
+        <li><strong>Phase Name:</strong> Set the current flight phase (e.g., <strong>PUSHBACK</strong>, <strong>ADMIL</strong>, <strong>Z1</strong>, <strong>20 DME</strong>, etc.).</li>
+        <li><strong>Gate Name:</strong> Select the gate location / number (departures only).</li>
+        <li><strong>Gate Direction:</strong> Choose the gate facing direction when available (departures only).</li>
+    </ul> 
+
+    <p>After setting up all parameters, click the <strong>CREATE</strong> button to spawn the aircraft in the scene.</p>
+
+    <div class="note">
+        <p><strong>Note:</strong> Each <strong>Call Sign</strong> is restricted to its specific <strong>Category</strong>. If you cannot find a specific flight ID, please verify that the correct category is selected, as we often overlook this during operation.</p>
+    </div>
+
+    <p>Once created, the aircraft is instantly broadcast across the network, ensuring all stations are updated in real-time. Upon successful synchronization, the following elements are generated instantly as well:</p>
+    <ul>
+        <li><strong>Map Node:</strong> An <strong>Airplane icon</strong> in the <strong>Map View</strong> showing aircraft physical position.</li>
+        <li><strong>Command Node:</strong> A <strong>Comand Node</strong> in the <strong>Command Panel</strong>  for aircraft call & action.</li>
+        <li><strong>Strip Node:</strong> A <strong>Flight strip</strong> in the <strong>Strip Panel</strong> displaying live telemetry data.</li>
+    </ul>
+
+    <div class="note">
+        <p><strong>Note:</strong> <strong>Map Nodes</strong> are visible to all stations. However, <strong>Strip</strong> and <strong>Command Nodes</strong> are station-specific; Departure stations manage  <strong>departure aircraft</strong>, while Arrival stations manage <strong>arrival aircraft</strong>.</p>
+    </div>
+
+
+    
+    <hr class="page-break">
+
+
+    
+    <h3>5.2 Map Node</h3>
+    <p>Every aircraft generates a <strong>Map Node</strong>, represented by an <strong>Airplane Icon</strong>, on the <strong>Radar</strong> or <strong>Surface map</strong> (or both), to show its physical location. This node features an <strong>information box</strong> connected by a line, displaying real-time telemetry data exactly where needed. The info box is <strong>fully draggable</strong> using the <strong>left mouse button</strong> and includes the following:</p>
+    <ul>
+        <li><strong>Callsign:</strong> Displays the aircraft identification (e.g., <strong>BG 367</strong>, <strong>BJR 471</strong>).</li>
+        <li><strong>Speed & Heading:</strong> Shows the current speed in <strong>knots (kts)</strong> and heading in <strong>degrees (°)</strong>.
+        <li><strong>Altitude:</strong> Displays the current altitude in feet (e.g., <strong>4000ft</strong>, <strong>3000ft</strong>, <strong>1500ft</strong>).</li>
+        <li><strong>Close Button (X):</strong> Click the <strong>cross (X)</strong> button at the <strong>bottom-right-corner</strong> to hide it.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> If you <strong>hide</strong> the aircraft map node and wonder how to get it back, simply click on the <strong>aircraft icon</strong> itself to make it <strong>appear</strong> again.
+    </div>
+    
+    <hr>
+
+    <h3>5.3 Command Node Overview</h3>
+    <p>Once you create an aircraft, you can immediately find its <strong>Command Node</strong> in Command Panel. Its the main control unit for the aircraft with following basic parts:</p>
+
+    <div style="margin: 20px 0; text-align: center;">
+        <img src="Images/Command_Strip.svg" alt="Command Strip">
+    </div>
+
+    <ul>
+        <li><strong>Call Sign:</strong> Displays the flight ID for easy identification (top-left).</li>
+        <li><strong>Altitude Setting:</strong> A dropdown menu to select the target altitude in the air (top-middle).</li>
+        <li><strong>Movement Button:</strong> Confirms/Freeze active aircraft movements (play/pause icon).</li>
+        <li><strong>Additional Tools:</strong> Show/Hide additional utility options (three dots).</li>
+        <li><strong>Phase Name:</strong> Show/Hide the relevant pilot call list (bottom-left).</li>
+        <li><strong>Next Phase:</strong> Switch the next operational path when available (bottom-right).</li>
+    </ul>
+
+
+
+    <hr class="page-break">
+
+
+
+    <h3>5.3.1 Aircraft Movement</h3>
+
+    <p>The system AI primarily manages the aircraft movement, while you use the <strong>Movement Button</strong> to confirm actions or pause the aircraft. To confirm movmement action or modifying aircraft route follow these operational steps:</p>
+
+    <ul>
+        <li><strong>Approve Movement:</strong> When the button shows a <strong>Green Play</strong> icon, it indicates an action (like <strong>Pushback</strong>, <strong>Taxi</strong>, or <strong>Line Up</strong>) requires your approval. Click the button to confirm when requested by ATC, and the aircraft will follow its predefined path.</li>
+        <li><strong>Freeze Aircraft:</strong> Click the <strong>Gray Pause</strong> icon to instantly freeze the aircraft.</li>
+        <li><strong>Resume Aircraft:</strong> Click the <strong>Gray Play</strong> icon to resume the aircraft back.</li>
+    </ul>
+
+    <p>When you click the <strong>Green Play</strong> icon to approve an action, the system handles it in one of two ways:</p>
+    <ul>
+        <li><strong>Direct Confirmation:</strong> A single click confirms simple commands like <strong>Line Up</strong>.</li>
+        <li><strong>Confirmation with Parameters:</strong> For complex commands, a popup appears to define specific parameters before approval. For example:
+            <ul>
+                <li><strong>Pushback:</strong> Select the facing direction (e.g., <strong>North</strong> or <strong>South</strong>).</li>
+                <li><strong>Taxi:</strong> Choose the specific taxi path (e.g., <strong>Charlie</strong>, <strong>Foxtrot</strong>, or <strong>Victor</strong>).</li>
+            </ul>
+        </li>
+    </ul>
+  
+    <p>Once you provide the required parameters and confirm, the AI automatically guides the aircraft through its pre-defined movement path.</p>
+
+    <hr>    
+
+
+    <h3>5.3.2 Next Phase Selection</h3>
+    <p>Located at the <strong>bottom-right</strong> of the command strip, this indicator shows the aircraft's upcoming phase (e.g., displaying <strong>Taxi</strong> during <strong>Pushback</strong>, or <strong>Line Up</strong> during <strong>Taxi</strong>). While typically <strong>disabled</strong>, it becomes an <strong>active dropdown</strong> whenever multiple next-phase options are possible, for example.</p>
+    <ul>
+        <li>During <strong>departure</strong> before reach up to <strong>airborn</strong> point, you can decide the aircraft's next path, such as choosing between entering a <strong>Circuit</strong> or proceeding to a <strong>Training Area</strong>.</li>
+        <li>During <strong>Downwind</strong> Before reaching the <strong>Base</strong> point, set whether the aircraft will perform a <strong>Low Go</strong>, or a <strong>Touch and Go</strong>, or a final <strong>Landing</strong>,.</li>
+    </ul>
+
+    <hr class="page-break">
+
+    <h3>5.3.3 Pilot Calls</h3>
+    <p>Clicking the <strong>Active Phase Name</strong> button opens the pilot call list, which appears directly below the button to ensure easy access. This list displays available communications which are relevant to the aircraft's current active phase,  making it simple for the operator to find the right option for the current stage of flight.</p>
+
+    <div style="text-align: center;">
+        <img src="Images/Pilot_call.jpg" alt="Pilot Call Parameters">
+    </div>
+
+    <p>As illustrated in the above image, these pilot calls are categorized into two distinct types:</p>
+    <ul>
+        <li><strong>Direct Call:</strong> These are simple call that trigger immediately upon clicking. As you can see in image, <strong>Request Pushback</strong> does not require any parameters; clicking it will immediately trigger the pilot call.</li>
+        <li><strong>Parametric Call:</strong> These are complex call that require additional parameter choice from a <strong>Parameter popup window</strong> before transmission. As shown in image, a <strong>Pushback Approval</strong> command requires you to specify a facing direction (e.g., North or South) based on the ATC trainee's command before confirming.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Note:</strong> For an effective training session, the operator plays a key role: he/she must trigger the correct pilot call within minimum time when the ATC trainee instructs the pilot. This synchronization will make make the simulation scenario feel alive.
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> Once a pilot call is played, the text becomes struck-through and turns gray to indicate it has already been used. However, the button remains clickable, allowing you to trigger the same call again if needed.
+    </div>
+
+
+    <hr class="page-break">
+
+
+
+    <h3>5.3.4 Altitude Setting</h3>
+    <p>You can adjust the aircraft's target altitude using the <strong>Altitude Dropdown</strong> located at the <strong>top-center</strong> of the command strip, which commands the aircraft to <strong>climb</strong> or <strong>descend</strong> to the selected flight level (e.g. <strong>6000</strong>, <strong>4000</strong>, <strong>3000</strong>, etc). Remember, This control dropdown <strong>only becomes active</strong> when the aircraft is in the air; otherwise it remains <strong>disabled</strong> and labelled as <strong>No Action</strong>.
+
+   
+    <hr>
+
+
+    <h3>5.3.5 Additional Tools</h3>
+    <p>By clicking the <strong>three dots</strong> <strong>option button</strong> located at the <strong>top-right-corner</strong> of the command strip, you can <strong>show or hide</strong> additional operational tools. These tools include:</p>
+    <ul>
+        <li><strong>Repeat Last Call:</strong> Replays the previous <strong>pilot call</strong>.</li>
+        <li><strong>Highlight:</strong> Ping a <strong>circular wave animation</strong> around the aircraft icon on the map.</li>
+        <li><strong>Destroy:</strong> Removes the aircraft from the simulation. When clicked, a popup appears requiring you to <strong>confirm</strong> the action before the aircraft is deleted.</li>
+    </ul>
+
+    <hr>
+
+    <h3>5.4 Strip Node</h3>
+    <p>The <strong>Strip Node</strong> in the <strong>Strip Panel</strong> provides a compact summary of each active aircraft. It allows you to monitor critical flight parameters at a glance, as shown below:</p>
+
+    <div>
+        <img src="Images/Strip_Node_UI.png" alt="Strip Node UI">
+    </div>
+    <ul>
+        <li><strong>Callsign:</strong> Unique flight identification (e.g., <strong>AWA_446</strong>).</li>
+        <li><strong>Heading:</strong> Current direction in degrees (<strong>°</strong>).</li>
+        <li><strong>Speed:</strong> Current ground speed in <strong>knots (kts)</strong>.</li>
+        <li><strong>Height:</strong> Current altitude in feet (e.g., <strong>3000f</strong>, <strong>1500ft</strong>).</li>
+        <li><strong>Phase Name:</strong> Current operational stage (e.g., <strong>PUSHBACK</strong>, <strong>6DME</strong>).</li>
+        <li><strong>Time:</strong> Associated timestamp or relevant clock data.</li>
+    </ul>
 
 </div>
 <div class="page-container">
@@ -735,6 +905,13 @@
         <li><strong>RASHEKUL SIR</strong> - <em>DESIGNATION @ BAF</em> | Logistics & Operational Oversight</li>
     </ul>
 
+</div>
+<div class="page-container">
+
+    <div style="width: 100%; height: 100%;">
+        <img src="/Images/Hardware Diagram.drawio.png" alt="Hardware Diagram">
+    </div>
+    
 </div>
 
 </body>
